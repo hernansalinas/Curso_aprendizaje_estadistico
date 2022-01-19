@@ -1,7 +1,18 @@
 # Curso_aprendizaje_estadistico
 Git hub con la información del curso de aprendizaje estadístico
 
+Contenido
 
+- Introduccion 
+- Introduccion a pandas
+- Intuición estadísticas en un modelo de machine learning
+- Regresion Lineal simple
+- Regresion Lineal multivariada 
+- Ecuacion normal en la regresion lineal
+- Ejemplo Practico de una regresion lineal
+<!--- Interpretación probabílistica -->
+
+ 
 
 
 
