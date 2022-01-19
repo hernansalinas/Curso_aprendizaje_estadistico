@@ -1,5 +1,9 @@
 # Curso_aprendizaje_estadistico
-Git hub con la información del curso de aprendizaje estadístico
+Curso electivo: Aprendizaje estadistico.
+Fecha: 2021-01
+Universidad de Antioquia
+
+Estado: En construcción.
 
 Contenido
 
@@ -14,10 +18,13 @@ Contenido
 
  
 
+Referencias 
+[1] [Hands On Machine Learning with Scikit Learn and TensorFlow] (https://github.com/ageron/handson-ml2)
+[2] [Course machine learning Stanfort university](https://cs229.stanford.edu/syllabus.html) 
+[3] [Una introducción a las técnicas de machine learning y deep learning] (https://github.com/rramosp/20182.mldl)
 
 
 Dataset 
-
 
 1. http://archive.ics.uci.edu/ml/index.php
 2. https://registry.opendata.aws/
