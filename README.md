@@ -28,6 +28,9 @@ Estado: En construcción.
 
 [3] [Una introducción a las técnicas de machine learning y deep learning] (https://github.com/rramosp/20182.mldl)
 
+[4] The Hundred-Page Machine Learning Book
+
+[5] An Introduction to Statistical Learning
 
 
 ## Referencias Dataset 
