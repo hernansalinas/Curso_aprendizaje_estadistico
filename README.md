@@ -10,13 +10,14 @@ Estado: En construcción.
 
 ## Contenido
 
-- Introduccion 
+- [Introduccion](https://github.com/hernansalinas/Curso_aprendizaje_estadistico/blob/main/Sesiones/Sesion_00_introduccion.ipynb)
 - Introduccion a pandas
 - Intuición estadísticas en un modelo de machine learning
 - Regresion Lineal simple
 - Regresion Lineal multivariada 
 - Ecuacion normal en la regresion lineal
 - Ejemplo Practico de una regresion lineal
+- Clasificación Regresión logística.
 <!--- Interpretación probabílistica -->
 
  
