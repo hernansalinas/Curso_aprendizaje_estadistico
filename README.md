@@ -5,7 +5,7 @@ Fecha: 2021-01
 
 Universidad de Antioquia
 
-Estado: En construcción 👷
+:construction: Estado: En construcción :construction:
 
 
 ## Contenido
