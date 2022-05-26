@@ -48,8 +48,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -442,13 +440,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>$P \geq 0.5$ se obtienen los objetos tipo 1</p></li>
 </ul>
 <p>Podemos establecer un clasificador de lods  sistemas basado en las probabilidades a partir de un clasificador logístico:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4d26e0da-e6eb-4d09-96e2-845483c583f3">
-<span class="eqno">(64)<a class="headerlink" href="#equation-4d26e0da-e6eb-4d09-96e2-845483c583f3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3c400011-3189-4a8c-9b95-2f4edfac84cd">
+<span class="eqno">(64)<a class="headerlink" href="#equation-3c400011-3189-4a8c-9b95-2f4edfac84cd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(z)=\frac{1}{(1+e^{-z})}
 \end{equation}\]</div>
 <p>Cuya derivada es :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3d3e34d7-2fc0-4a6f-b325-8bd9f4994039">
-<span class="eqno">(65)<a class="headerlink" href="#equation-3d3e34d7-2fc0-4a6f-b325-8bd9f4994039" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f9d242f8-e26c-45fb-9313-6068f79ff8dd">
+<span class="eqno">(65)<a class="headerlink" href="#equation-f9d242f8-e26c-45fb-9313-6068f79ff8dd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f'(z)=f(z)(1-f(z))
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -468,7 +466,7 @@ f'(z)=f(z)(1-f(z))
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x210bd69f220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x29567bdf2b0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Sesion_08_clasificacion_5_1.png" src="../_images/Sesion_08_clasificacion_5_1.png" />
@@ -480,8 +478,8 @@ f'(z)=f(z)(1-f(z))
 </ul>
 <p>¿Cual es la probabilidad de que dado un hyperplano, los valores de un hyperlado sean objetos tipo 0 o tipo 1?</p>
 <p>Aplicando la regresión logistica, a las regresiones multivariadas estudiadas en la sesiones anteriores, tenemos que el argumento $z=\Theta^{T} X$, así:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26d31149-cccd-49a7-9a4e-105bfaf0ac95">
-<span class="eqno">(66)<a class="headerlink" href="#equation-26d31149-cccd-49a7-9a4e-105bfaf0ac95" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0c4df4ec-bf94-438b-9dd0-b5d2de5fb9e8">
+<span class="eqno">(66)<a class="headerlink" href="#equation-0c4df4ec-bf94-438b-9dd0-b5d2de5fb9e8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 h_{\theta}(X)=\frac{1}{(1+e^{-\Theta^T X})}
 \end{equation}\]</div>
 <ul class="simple">
@@ -526,8 +524,8 @@ h_{\theta}(X)=\frac{1}{(1+e^{-\Theta^T X})}
 </div>
 <p>Fronteras no lineal también puede ser consideradas, para ello se puede definir  $\Theta^T X$ como funcion de un polinomio, por ejemplo</p>
 <p>$\Theta^T X =  \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_1^2 +\theta_4 x_1^4$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-12ba0524-4165-4340-8609-719beb024bb4">
-<span class="eqno">(67)<a class="headerlink" href="#equation-12ba0524-4165-4340-8609-719beb024bb4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a324a789-de10-41f3-9d93-a8a30738d5af">
+<span class="eqno">(67)<a class="headerlink" href="#equation-a324a789-de10-41f3-9d93-a8a30738d5af" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 h_\theta(X) =  \frac{1}{1+e^{\theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_1^2 +\theta_4 x_1^4}}
 \end{equation}\]</div>
 <p>La frontera de desición en este caso esta determinada por:</p>
@@ -594,8 +592,8 @@ para obtener un clasificador con valores de y = 1.</p>
 <p>De forma general, ¿Cómo pueden ser elegidos los valores de $\Theta$?.</p>
 <p>Para todo el conjunto de datos, tenemos que:</p>
 <p>Sea $\Theta^T = [\theta_0,\theta_1,\theta_2,…,\theta_n]$ una matrix $1 \times (n+1)$ y</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89f0f2dd-b0cc-496e-ad50-322c19381f24">
-<span class="eqno">(68)<a class="headerlink" href="#equation-89f0f2dd-b0cc-496e-ad50-322c19381f24" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-46285d80-0e88-4a5b-988a-024c6570e419">
+<span class="eqno">(68)<a class="headerlink" href="#equation-46285d80-0e88-4a5b-988a-024c6570e419" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 X =
 \begin{bmatrix}
 1&amp; 1 &amp; 1 &amp; .&amp;.&amp;.&amp;1\\
@@ -606,8 +604,8 @@ x_1^{(1)}&amp;x_1^{(2)} &amp; x_1^{(3)} &amp; .&amp;.&amp;.&amp;x_1^{(m)}\\
 x_n^{(1)}&amp;x_n^{(2)} &amp; x_n^{(3)} &amp; .&amp;.&amp;.&amp;x_n^{(m)}\\
 \end{bmatrix}_{(n+1) \times m}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-cf277597-eb99-48c2-b201-1b98dfc3883a">
-<span class="eqno">(69)<a class="headerlink" href="#equation-cf277597-eb99-48c2-b201-1b98dfc3883a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-938c328d-b67f-4005-992d-78cddd33129e">
+<span class="eqno">(69)<a class="headerlink" href="#equation-938c328d-b67f-4005-992d-78cddd33129e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 h_\theta (x)= \frac{1}{1+e^{\Theta ^T X}}
 \end{equation}\]</div>
 <p>Para ello, podemos definir la función de coste como :</p>
@@ -615,8 +613,8 @@ h_\theta (x)= \frac{1}{1+e^{\Theta ^T X}}
 <p>Esta función de coste permite establecer el mejor clasificadose para la regresión logistica de acuerdo a la teroria de probabilidad. Se garantiza que cuando $P(y=1|x,\theta)$ se cumple la función de coste se minimiza, penalizando los valores que sean iguales a $P(y=0|x,\theta)$, analogamente, se cumple que cuando $P(y=0|x,\theta)$ se cumple la función de coste se minimiza, penalizando los valores que sean iguales a $P(y=1|x,\theta)$.
 La metrica empleada para la regresión lineal no es recomedada en este caso, dado que la funcion de coste puede presentar múltiples minimos que dificultan la minimizacion  a través de algunas de las técnicas empleadas. Una justificación adicional para la métrica  es dada mas adelante segun la teoria de la probabilidad.</p>
 <p>Se deja como tarea motrar que:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e84b3da5-6268-40c2-9b20-2a01b685eab1">
-<span class="eqno">(70)<a class="headerlink" href="#equation-e84b3da5-6268-40c2-9b20-2a01b685eab1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5d15de48-72f8-4da1-82ab-747945bef965">
+<span class="eqno">(70)<a class="headerlink" href="#equation-5d15de48-72f8-4da1-82ab-747945bef965" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m}\sum_{i=1}^{m}[y^{(i)}-h_\theta X^{(i)}] X_j^{(i)}
 \end{equation}\]</div>
 <p>Para la demostración, muestre que:</p>
@@ -635,35 +633,35 @@ La metrica empleada para la regresión lineal no es recomedada en este caso, dad
 <div class="tex2jax_ignore mathjax_ignore section" id="interpretacion-estadistica">
 <h1>Interpretación estadística<a class="headerlink" href="#interpretacion-estadistica" title="Permalink to this headline">¶</a></h1>
 <p>¿Qué tan adeacuado es la elección de $J(\theta)$  para el modelo de regresion logistica?</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ec141d2-4eed-43c8-9970-f28ce5592d92">
-<span class="eqno">(71)<a class="headerlink" href="#equation-1ec141d2-4eed-43c8-9970-f28ce5592d92" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b7cd4c28-85fb-4381-8014-5d72fdee7178">
+<span class="eqno">(71)<a class="headerlink" href="#equation-b7cd4c28-85fb-4381-8014-5d72fdee7178" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 P(y=1|x;\theta)= h_{\theta}(X^{(i)})
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-25ba5b15-a00c-4972-b40c-ad036b45b3e5">
-<span class="eqno">(72)<a class="headerlink" href="#equation-25ba5b15-a00c-4972-b40c-ad036b45b3e5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3d0ffbee-2dfd-4af7-920f-3fcd74028c0f">
+<span class="eqno">(72)<a class="headerlink" href="#equation-3d0ffbee-2dfd-4af7-920f-3fcd74028c0f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 P(y=0|x;\theta)= 1-h_{\theta}(X^{(i)}) 
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7bfbad81-0f6c-4c06-a6c0-42ddfe9e8c44">
-<span class="eqno">(73)<a class="headerlink" href="#equation-7bfbad81-0f6c-4c06-a6c0-42ddfe9e8c44" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d1766eb7-1d47-41a3-9ed3-83de5bd2de32">
+<span class="eqno">(73)<a class="headerlink" href="#equation-d1766eb7-1d47-41a3-9ed3-83de5bd2de32" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 P(y|x;\theta)=[h_{\theta}(X^{(i)})]^{y}[1-h_{\theta}(X^{(i)})]^{1-y}
 \end{equation}\]</div>
 <p>Asumiendo que los datos de entrenamiento son independientes:</p>
 <p>$\cal{L}(\theta)=p(\vec{y}|x, \theta)$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf43a2a9-2bc3-4fd6-aa75-c1433e9b80a1">
-<span class="eqno">(74)<a class="headerlink" href="#equation-cf43a2a9-2bc3-4fd6-aa75-c1433e9b80a1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a87c6b0b-75d9-4cb1-98ad-a4d1f1d5eef1">
+<span class="eqno">(74)<a class="headerlink" href="#equation-a87c6b0b-75d9-4cb1-98ad-a4d1f1d5eef1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \cal{L}(\theta)=\prod_{i=1}^{m} [h_{\theta}(X^{(i)})]^{y}[1-h_{\theta}(X^{(i)})]^{1-y}
 \end{equation}\]</div>
 <p>tomando el logaritmo:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b6e68692-65a1-4d07-9e53-976cdc9ffe21">
-<span class="eqno">(75)<a class="headerlink" href="#equation-b6e68692-65a1-4d07-9e53-976cdc9ffe21" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6c4e569a-09b3-431a-bc5b-5444a417faad">
+<span class="eqno">(75)<a class="headerlink" href="#equation-6c4e569a-09b3-431a-bc5b-5444a417faad" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \log \cal{L}(\theta)= \sum_{i=1}^{m} y \log h_{\theta}(X^{(i)}) + (1-y)(1-h_{\theta}(X^{(i)}))
 \end{equation}\]</div>
 <p>Los datos a considerar son los mas probables es decir que para encontrar los valores de $\theta$ que nos garantizan la maxima probabilidad es necesario maximar la función anterior. Despues de realizar los calculos se puede mostrar la ecuación dada para el gradiente de la función de coste.</p>
 <p>En conclusión se cumple que:</p>
 <p>Para todo el conjunto de datos, tenemos que:</p>
 <p>Sea $\Theta^T = [\theta_0,\theta_1,\theta_2,…,\theta_n]$ una matrix $1 \times (n+1)$ y</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7f0083c6-799c-4681-9686-348cc86e5b90">
-<span class="eqno">(76)<a class="headerlink" href="#equation-7f0083c6-799c-4681-9686-348cc86e5b90" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3d743488-5b59-4fc6-a5fc-e3118a998ea9">
+<span class="eqno">(76)<a class="headerlink" href="#equation-3d743488-5b59-4fc6-a5fc-e3118a998ea9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 X =
 \begin{bmatrix}
 1&amp; 1 &amp; 1 &amp; .&amp;.&amp;.&amp;1\\
@@ -674,8 +672,8 @@ x_1^{(1)}&amp;x_1^{(2)} &amp; x_1^{(3)} &amp; .&amp;.&amp;.&amp;x_1^{(m)}\\
 x_n^{(1)}&amp;x_n^{(2)} &amp; x_n^{(3)} &amp; .&amp;.&amp;.&amp;x_n^{(m)}\\
 \end{bmatrix}_{(n+1) \times m}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9ca41f72-8264-4b1d-bdfe-b8daf68e2d94">
-<span class="eqno">(77)<a class="headerlink" href="#equation-9ca41f72-8264-4b1d-bdfe-b8daf68e2d94" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2356a957-4e85-449a-b16e-6be3e824ab3b">
+<span class="eqno">(77)<a class="headerlink" href="#equation-2356a957-4e85-449a-b16e-6be3e824ab3b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 h_\theta (x)= \frac{1}{1+e^{\Theta ^T X}}
 \end{equation}\]</div>
 <ul class="simple">
@@ -683,8 +681,8 @@ h_\theta (x)= \frac{1}{1+e^{\Theta ^T X}}
 $ J (\Theta) =\frac{1}{m} \sum_{i=1}^{m} \left[-y\log (h_{\theta}(X ^ {i})) - (1-y)\log (1-h_{\theta}(X^{i})) \right]$</p></li>
 <li><p>Derivada de la funcion de coste</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-ea2a4845-61e8-41a9-851b-fa0119c6cb3b">
-<span class="eqno">(78)<a class="headerlink" href="#equation-ea2a4845-61e8-41a9-851b-fa0119c6cb3b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-71fe9954-c3d9-4c0a-8fd9-1ed778ac9842">
+<span class="eqno">(78)<a class="headerlink" href="#equation-71fe9954-c3d9-4c0a-8fd9-1ed778ac9842" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m}\sum_{i=1}^{m}[y^{(i)}-h_\theta X^{(i)}] X_j^{(i)}
 \end{equation}\]</div>
 <p>Tomar el <a class="reference external" href="https://en.wikipedia.org/wiki/Iris_flower_data_set">iris dataset</a> desde sklearn:</p>
@@ -1117,10 +1115,10 @@ latter are NOT linearly separable from each other.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\salin\AppData\Local\Temp\ipykernel_27856\2474600366.py:3: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\salin\AppData\Local\Temp\ipykernel_35164\2474600366.py:3: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   y_train = (df_train[&#39;Target&#39;] == 0).astype(np.float) # forma rapida, se puede one hot enconder
-C:\Users\salin\AppData\Local\Temp\ipykernel_27856\2474600366.py:6: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+C:\Users\salin\AppData\Local\Temp\ipykernel_35164\2474600366.py:6: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   y_test = (df_test[&#39;Target&#39;] == 0).astype(np.float)
 </pre></div>

@@ -48,8 +48,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -522,8 +520,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="tex2jax_ignore mathjax_ignore section" id="con-m-datos-de-entrenamientos">
 <h1>Con m datos de entrenamientos.<a class="headerlink" href="#con-m-datos-de-entrenamientos" title="Permalink to this headline">¶</a></h1>
 <p>Para $m$ datos de entrenamiento, las expresión anteriores pueden ser resumidas en las siguientes ecuaciones</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5b306c3d-719c-42f2-8c0c-b108647a3d83">
-<span class="eqno">(79)<a class="headerlink" href="#equation-5b306c3d-719c-42f2-8c0c-b108647a3d83" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f8d2379a-3d7e-40d2-a49c-2b7ee45aaeaa">
+<span class="eqno">(79)<a class="headerlink" href="#equation-f8d2379a-3d7e-40d2-a49c-2b7ee45aaeaa" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \begin{bmatrix}
 z_1^{(0)}  &amp;z_1^{(1)} &amp; .&amp;.&amp; .&amp;z_1^{(m)}\\
 z_2^{(0)}  &amp;z_2^{(1)} &amp;. &amp;.&amp;  .&amp;z_2^{(m)}\\
@@ -558,13 +556,13 @@ b_{n^{[l]}}\\
 \end{bmatrix}^{[l]} 
 \end{equation}\]</div>
 <p>Escrito de una formas mas compacta tenemos que:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c09dcda2-13d5-4356-ab61-5e6ab5642f40">
-<span class="eqno">(80)<a class="headerlink" href="#equation-c09dcda2-13d5-4356-ab61-5e6ab5642f40" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9126e059-c479-4ffc-b477-5089f401e5f2">
+<span class="eqno">(80)<a class="headerlink" href="#equation-9126e059-c479-4ffc-b477-5089f401e5f2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 [ \vec{Z}^{[l](0)},\vec{Z}^{[l](1)},...,\vec{Z}^{[l](m)}  ]= \Theta^{[l]} [\vec{A}^{[l-1](0)},\vec{A}^{[l-1](1)},...,\vec{A}^{[l-1](m)} ]+ \vec{b}^{[l]}
 \end{equation}\]</div>
 <p>Aplicando la funcion de activación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c5ed84ef-cec0-4167-a5d5-5fa5b9ee2d07">
-<span class="eqno">(81)<a class="headerlink" href="#equation-c5ed84ef-cec0-4167-a5d5-5fa5b9ee2d07" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0d4430ac-d571-4601-837b-260c31f01f2b">
+<span class="eqno">(81)<a class="headerlink" href="#equation-0d4430ac-d571-4601-837b-260c31f01f2b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 [\vec{A}^{[l](0)},\vec{A}^{[l](1)},...,\vec{A}^{[l](m)} ]=f([\vec{Z}^{[l](0)},\vec{Z}^{[l](1)},...,\vec{Z}^{[l](m)}  ]) 
 \end{equation}\]</div>
 <p>Las dimensiones de las expresiones anteriores, pueden ser resumidas en lo siguiente:</p>
@@ -753,21 +751,21 @@ b_{n^{[l]}}\\
 <h1>Backward Propagation<a class="headerlink" href="#backward-propagation" title="Permalink to this headline">¶</a></h1>
 <p>Para una capa $l$ arbitraria tenemos que:</p>
 <ul>
-<li><div class="amsmath math notranslate nohighlight" id="equation-e99ff8ba-bdae-4232-9ce1-c4d357d02a7d">
-<span class="eqno">(82)<a class="headerlink" href="#equation-e99ff8ba-bdae-4232-9ce1-c4d357d02a7d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<li><div class="amsmath math notranslate nohighlight" id="equation-87ce0a28-c8c7-4e27-9456-94c378ad6574">
+<span class="eqno">(82)<a class="headerlink" href="#equation-87ce0a28-c8c7-4e27-9456-94c378ad6574" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 d\Theta^{[l]} =  d{\cal Z}^{(i)[l]} A^{(i)[l-1]} = dA^{(i)[l]} f'({\cal Z}^{(i)[l]} ) A^{(i)[l-1]}
 \end{equation}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-7073f9e1-4128-49f7-9359-47f3a8c2a9f3">
-<span class="eqno">(83)<a class="headerlink" href="#equation-7073f9e1-4128-49f7-9359-47f3a8c2a9f3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<li><div class="amsmath math notranslate nohighlight" id="equation-045a792a-8c4b-4dbd-a867-b5f77ae5fdcd">
+<span class="eqno">(83)<a class="headerlink" href="#equation-045a792a-8c4b-4dbd-a867-b5f77ae5fdcd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 db^{[l]} =  d{\cal Z}^{(i)[L]}  = dA^{(i)[l]} f'({\cal Z}^{(i)[l]} ) 
 \end{equation}\]</div>
 </li>
 </ul>
 <p>Los valores de dA pueden ser escritos como:</p>
 <ul>
-<li><div class="amsmath math notranslate nohighlight" id="equation-c364bb71-8b4c-433f-8c8b-033377b8f69b">
-<span class="eqno">(84)<a class="headerlink" href="#equation-c364bb71-8b4c-433f-8c8b-033377b8f69b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<li><div class="amsmath math notranslate nohighlight" id="equation-b0714f48-1fb0-4272-8106-586c99c18e3a">
+<span class="eqno">(84)<a class="headerlink" href="#equation-b0714f48-1fb0-4272-8106-586c99c18e3a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 dA^{(i)[l-1]} = \Theta^{l} dZ^{(i)[l]}
 \end{equation}\]</div>
 </li>

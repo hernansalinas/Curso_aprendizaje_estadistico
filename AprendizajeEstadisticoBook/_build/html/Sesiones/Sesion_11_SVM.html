@@ -48,8 +48,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -401,8 +399,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Entendamos la intuición detras de estos dos conceptos.</p>
 <p>Nuestra funcion de coste esta definda como sigue:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-acf8154d-86da-4b36-a8ec-fafdb27c0f59">
-<span class="eqno">(85)<a class="headerlink" href="#equation-acf8154d-86da-4b36-a8ec-fafdb27c0f59" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f711f878-0d89-4310-8449-c84b003656a1">
+<span class="eqno">(85)<a class="headerlink" href="#equation-f711f878-0d89-4310-8449-c84b003656a1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 J(\theta)=\frac{1}{m}\sum_{i=1}^{m} [-y^{(i)}\log(h^{(i)}) + (1-y^{(i)})\log(1-h^{(i)})]  +  \frac{\lambda}{2m} \sum_{j=1}^{n}\theta_j^2
 \end{equation}\]</div>
 <p>Si suponemos que $y=1$ y $y=0$ tenemos para estos dos casos que:</p>

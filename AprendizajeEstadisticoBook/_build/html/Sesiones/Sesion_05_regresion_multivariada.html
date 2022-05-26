@@ -48,8 +48,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -477,8 +475,8 @@ $\hat{y} = \hat{y}_1^{(1)}, \hat{y}_1^{(2)}…\hat{y}_1^{(m)} $, el conjunto de 
 <p>y el el modelo puede ser ajustado como sigue:</p>
 <p>Para un solo conjunto de datos de entrenamiento tentemos que:</p>
 <p>$y = h(\theta_0,\theta_1,\theta_2,…,\theta_n ) = \theta_0 + \theta_1 x_1+\theta_2 x_2 + \theta_3 x_3 +…+ \theta_n x_n $.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5537878f-1ce7-4982-8f06-977c01bf493a">
-<span class="eqno">(43)<a class="headerlink" href="#equation-5537878f-1ce7-4982-8f06-977c01bf493a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9b7cb936-d7a4-4bf9-bc28-3b973d51c214">
+<span class="eqno">(43)<a class="headerlink" href="#equation-9b7cb936-d7a4-4bf9-bc28-3b973d51c214" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 h_{\Theta}(x) = [\theta_0,\theta_1,...,\theta_n ]\begin{bmatrix}
 1^{(1)}\\
 x_1^{(1)}\\
@@ -491,8 +489,8 @@ x_n^{(1)}\\
 \end{equation}\]</div>
 <p>Para todo el conjunto de datos, tenemos que:</p>
 <p>Sea $\Theta^T = [\theta_0,\theta_1,\theta_2,…,\theta_n]$ una matrix $1 \times (n+1)$ y</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c604671f-8af7-436c-a18a-66f48a4d0f53">
-<span class="eqno">(44)<a class="headerlink" href="#equation-c604671f-8af7-436c-a18a-66f48a4d0f53" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2421b697-51cf-4471-a520-e44b87491679">
+<span class="eqno">(44)<a class="headerlink" href="#equation-2421b697-51cf-4471-a520-e44b87491679" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 X =
 \begin{bmatrix}
 1&amp; 1 &amp; 1 &amp; .&amp;.&amp;.&amp;1\\
@@ -509,8 +507,8 @@ x_n^{(1)}&amp;x_n^{(2)} &amp; x^{(3)} &amp; .&amp;.&amp;.&amp;x_n^{(m)}\\
 <ul class="simple">
 <li><p>Metrica Eculidiana</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-698d3184-9d5e-4d6e-97a9-0d3b1d421907">
-<span class="eqno">(45)<a class="headerlink" href="#equation-698d3184-9d5e-4d6e-97a9-0d3b1d421907" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fd03cd32-0a2b-4f6c-aba7-79cd2b4cf659">
+<span class="eqno">(45)<a class="headerlink" href="#equation-fd03cd32-0a2b-4f6c-aba7-79cd2b4cf659" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 J(\theta_1,\theta_2,\theta_3, ...,\theta_n )=\frac{1}{2m} \sum_{i=1}^m ( h_{\Theta} (X)-\hat{y}^{(i)})^2 =\frac{1}{2m} \sum_{i = 1}^m (\Theta^{T} X - \hat{y}^{(i)})^2
 \end{equation}\]</div>
 <p>Otras métricas pueden ser definidas como sigue en la siguiente referencia.  <a class="reference external" href="https://jmlb.github.io/flashcards/2018/04/21/list_cost_functions_fo_neuralnets/">Metricas</a>.</p>
@@ -520,8 +518,8 @@ $\Theta = \theta_0,\theta_1,\theta_2,…,\theta_n$ que minimizan el error, respe
 <div class="section" id="gradiente-descendente">
 <h2>Gradiente descendente<a class="headerlink" href="#gradiente-descendente" title="Permalink to this headline">¶</a></h2>
 <p>Consideremos la función de coste sin realizar el promedio esima de funcion de coste:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ac99d2d-aee8-4a51-b020-1d856c7924bc">
-<span class="eqno">(46)<a class="headerlink" href="#equation-4ac99d2d-aee8-4a51-b020-1d856c7924bc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-23e6e37b-6c21-40d0-8704-b5225d34030d">
+<span class="eqno">(46)<a class="headerlink" href="#equation-23e6e37b-6c21-40d0-8704-b5225d34030d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Lambda =
 \begin{bmatrix}
 (\theta_0 1 + \theta_1 x_1^1+\theta_2 x_2^2 + \theta_3 x_3^3 +...+ \theta_n x_n^n - \hat{y}^{1})^2 \\
@@ -535,31 +533,31 @@ $\Theta = \theta_0,\theta_1,\theta_2,…,\theta_n$ que minimizan el error, respe
 <p>$\Lambda= [\Lambda_1,\Lambda_2, …,\Lambda_m]$</p>
 <p>$J = \frac{1}{2m} \sum_{i}^m \Lambda_i $</p>
 <p>El gradiente descente, puede ser escrito como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e992cd4a-0aec-4153-9ea5-8b21374a32f2">
-<span class="eqno">(47)<a class="headerlink" href="#equation-e992cd4a-0aec-4153-9ea5-8b21374a32f2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-47487c83-1777-4447-8fcd-24076491240f">
+<span class="eqno">(47)<a class="headerlink" href="#equation-47487c83-1777-4447-8fcd-24076491240f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Delta \vec{\Theta} =  - \alpha \nabla J(\theta_0, \theta_1,...,\theta_n)
 \end{equation}\]</div>
 <p>escogiendo el valor j-esimo tenemos que:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7458f899-c16e-4f92-9506-7f1f9989917d">
-<span class="eqno">(48)<a class="headerlink" href="#equation-7458f899-c16e-4f92-9506-7f1f9989917d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a13237bf-33cb-4911-b5ad-42f798f59dc0">
+<span class="eqno">(48)<a class="headerlink" href="#equation-a13237bf-33cb-4911-b5ad-42f798f59dc0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \theta_j :=  - \alpha \frac{\partial J(\theta_0, \theta_1,...\theta_j...,\theta_n)}{\partial \theta_j}
 \end{equation}\]</div>
 <p>Aplicando lo anterior a a funcion de coste asociada a la metrica ecuclidiana, tenemos que:</p>
 <p>Para $j = 0$,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cb977d82-5b2c-4da9-9aba-77ea7511cab2">
-<span class="eqno">(49)<a class="headerlink" href="#equation-cb977d82-5b2c-4da9-9aba-77ea7511cab2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d481e904-0127-4142-9b66-5efc40dd6f7a">
+<span class="eqno">(49)<a class="headerlink" href="#equation-d481e904-0127-4142-9b66-5efc40dd6f7a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \theta_0 :=  - \alpha \frac{\partial J(\theta_0, \theta_1,...\theta_j...,\theta_n)}{\partial \theta_0} = \frac{1}{m}\alpha \sum_{i=1}^m (\theta_j X_{ji} - \hat{y}^{(i)}) 1
 \end{equation}\]</div>
 <p>Para $0&lt;j&lt;n $</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0f7f56a7-7a07-4cef-a53e-d43cd40beffe">
-<span class="eqno">(50)<a class="headerlink" href="#equation-0f7f56a7-7a07-4cef-a53e-d43cd40beffe" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d4b67a9d-222f-4bfb-8c12-b13f06d01f41">
+<span class="eqno">(50)<a class="headerlink" href="#equation-d4b67a9d-222f-4bfb-8c12-b13f06d01f41" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \theta_j :=  - \alpha \frac{\partial J(\theta_0, \theta_1,...\theta_j...,\theta_n)}{\partial \theta_j} = \frac{1}{m} \alpha\sum_{i=1}^m (\theta_{j} X_{ji} - \hat{y}^{(i)}) X_j
 \end{equation}\]</div>
 <p>donde X_j es el vector de entrenamiento j-esimo.</p>
 <p>Lo  anterior puede ser generalizado como siguem, teniendo presente que $X_0 = \vec{1}$</p>
 <p>Para $0\leq j&lt;n$,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a0a8c67-25b6-4199-8503-3601edff2906">
-<span class="eqno">(51)<a class="headerlink" href="#equation-8a0a8c67-25b6-4199-8503-3601edff2906" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8068f369-218d-46f7-8ed0-c6ac94dee58e">
+<span class="eqno">(51)<a class="headerlink" href="#equation-8068f369-218d-46f7-8ed0-c6ac94dee58e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \theta_j :=  - \alpha \frac{\partial J(\theta_0, \theta_1,...\theta_j...,\theta_n)}{\partial \theta_j} = \frac{1}{m} \alpha\sum_{i=1}^m (\theta_j X_{ji} - \hat{y}^{(i)}) X_j 
 \end{equation}\]</div>
 </div>
@@ -775,15 +773,15 @@ En este caso el exponente de la variable X habla de la complejidad del modelo, p
 </div>
 <p>¿Qué sucede si las caracteristicas no estan escaladas?</p>
 <p>Es recomendable escalar en función de :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a42427a6-ff62-44cd-b412-00645c23509d">
-<span class="eqno">(52)<a class="headerlink" href="#equation-a42427a6-ff62-44cd-b412-00645c23509d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7d2b6f45-c5f4-400f-8039-a83d1472e33f">
+<span class="eqno">(52)<a class="headerlink" href="#equation-7d2b6f45-c5f4-400f-8039-a83d1472e33f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 x_i = \frac{x_i-\mu_i}{s_i}
 \end{equation}\]</div>
 <p>$\mu_i$:  es el promedio de los datos de la caracteristica i</p>
 <p>$s_i$:  es el rango de valores maximos o minimos o la desviacion estandar.</p>
 <p>Si el rango de valores de la caracteristica xi esta entre  [200,3000] y la media de valores es 2000, tenemos que</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0cadb801-e555-4d50-8c76-ce09d8e9947e">
-<span class="eqno">(53)<a class="headerlink" href="#equation-0cadb801-e555-4d50-8c76-ce09d8e9947e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6d4dfad1-a468-48ba-87a5-63d3e9e15fef">
+<span class="eqno">(53)<a class="headerlink" href="#equation-6d4dfad1-a468-48ba-87a5-63d3e9e15fef" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 x_i = \frac{x_i-2000}{2800}
 \end{equation}\]</div>
 <div class="cell docutils container">
