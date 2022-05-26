@@ -544,7 +544,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="repaso-de-python">
+  <p><a href="https://colab.research.google.com/github/hernansalinas/Curso_aprendizaje_estadistico/blob/main/Sesiones/Sesion_01b_pandas.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="repaso-de-python">
 <h1>Repaso de python.<a class="headerlink" href="#repaso-de-python" title="Permalink to this headline">¶</a></h1>
 <p>Objetivo: El objetivo de esta sesion es estudiar conceptos basicos de python necesarios para realizar modelos de maching learning</p>
 <ol class="simple">
@@ -1778,18 +1779,19 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="nn">Input In [14],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>   <span class="c1"># Common for</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>   <span class="n">tini0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>   <span class="n">squares_0</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>   <span class="n">tend0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>   <span class="c1"># Operation map</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Comprhension expresion </span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">tini2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">squares_2</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">tend2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>    
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">tend0</span><span class="o">-</span><span class="n">tini0</span><span class="p">,</span> <span class="n">tend1</span><span class="o">-</span><span class="n">tini1</span><span class="p">,</span> <span class="n">tend2</span><span class="o">-</span><span class="n">tini2</span><span class="p">]</span> <span class="p">)</span>
 
-<span class="nn">Input In [11],</span> in <span class="ni">squares_0</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">4</span>   <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">return</span> <span class="n">squares</span>
+<span class="nn">Input In [11],</span> in <span class="ni">squares_2</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">def</span> <span class="nf">squares_2</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">14</span>   <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
+
+<span class="nn">Input In [11],</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">def</span> <span class="nf">squares_2</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">14</span>   <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
