@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aprendizaje Estadístico vs. Aprendizaje Automático &#8212; Aprendizaje Estatadistico</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Intucion Estadistica" href="Markdown_structures/02IntuicionEstadistica.html" />
+    <link rel="prev" title="Introducción Aprendizaje Estadistico" href="Markdown_structures/01Introduccion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Aprendizaje Estatadistico</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Curso_aprendizaje_estadistico
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Markdown_structures/00PythonBasico.html">
+   Python Basico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_01a_pandas.html">
+     Repaso de python.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_01b_pandas.html">
+     Construyendo Data Frame desde diccionarios  y cargando datos del un data frame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Markdown_structures/01Introduccion.html">
+   Introducción Aprendizaje Estadistico
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Aprendizaje Estadístico vs. Aprendizaje Automático
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Markdown_structures/02IntuicionEstadistica.html">
+   Intucion Estadistica
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_02_intuicion_estadistica.html">
+     1 Dimension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_03_intuicion_estadistica_II.html">
+     2 Dimensiones
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Markdown_structures/03Modelos.html">
+   Modelos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_04_regresion_lineal.html">
+     Estructura de un problema general de machine learning:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_05_regresion_multivariada.html">
+     Regresion multivariada
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_06_regresion_multivariada_normal_equation.html">
+     Regresion multivariada ecuacion normal, repaso breve.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_07_Ejemplo_practico.html">
+     Solución a un problema general de machine learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_08_clasificacion.html">
+     Regresión Logística
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_10_nn_desde_cero_sin_generalizacion.html">
+     Exploracion de la data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_11_SVM.html">
+     Maquinas de soporte vectorial, (
+     <em>
+      Support vector machine SVM
+     </em>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_12_Desicion_Tree.html">
+     Arboles de desición
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Sesiones/Sesion_00_introduccion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSesiones/Sesion_00_introduccion.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Sesiones/Sesion_00_introduccion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Aprendizaje Estadístico vs. Aprendizaje Automático
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-vs-data-mining">
+     Machine Learning vs. Data Mining
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#las-dos-culturas-breiman-2001b">
+     Las dos culturas (Breiman, 2001b)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-vs-estadistica-dunson-2018">
+     Machine Learning vs. Estadística (Dunson, 2018)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metodos-de-aprendizaje-estadistico">
+   Métodos de Aprendizaje Estadístico
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aprendizaje-supervisado">
+   Aprendizaje supervisado :
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taxonomia">
+     Taxonomia:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aprendizaje-no-supervisado">
+   Aprendizaje No supervisado
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aprendizaje-reforzado">
+   Aprendizaje Reforzado
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#herramientas-del-curso">
+   Herramientas del curso
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preeliminares">
+   Preeliminares.
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Aprendizaje Estadístico vs. Aprendizaje Automático</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Aprendizaje Estadístico vs. Aprendizaje Automático
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-vs-data-mining">
+     Machine Learning vs. Data Mining
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#las-dos-culturas-breiman-2001b">
+     Las dos culturas (Breiman, 2001b)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-vs-estadistica-dunson-2018">
+     Machine Learning vs. Estadística (Dunson, 2018)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metodos-de-aprendizaje-estadistico">
+   Métodos de Aprendizaje Estadístico
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aprendizaje-supervisado">
+   Aprendizaje supervisado :
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taxonomia">
+     Taxonomia:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aprendizaje-no-supervisado">
+   Aprendizaje No supervisado
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aprendizaje-reforzado">
+   Aprendizaje Reforzado
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#herramientas-del-curso">
+   Herramientas del curso
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preeliminares">
+   Preeliminares.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/hernansalinas/Curso_aprendizaje_estadistico/blob/main/Sesiones/Sesion_01a_pandas.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="aprendizaje-estadistico-vs-aprendizaje-automatico">
+<h1>Aprendizaje Estadístico vs. Aprendizaje Automático<a class="headerlink" href="#aprendizaje-estadistico-vs-aprendizaje-automatico" title="Permalink to this headline">¶</a></h1>
+<p>Tomado de : https://rubenfcasal.github.io/aprendizaje_estadistico/aprendizaje-estad%C3%ADstico-vs.-aprendizaje-autom%C3%A1tico.html</p>
+<ul class="simple">
+<li><p>El término Machine Learning (ML; Aprendizaje Automático) se utiliza en el campo de la Intelingencia Artificial desde 1959 para hacer referencia, fundamentalmente, a algoritmos de predicción (inicialmente para reconocimiento de patrones). Muchas de las herramientas que utilizan provienen del campo de la Estadística y, en cualquier caso, la Estadística (y por tanto las Matemáticas) es la base de todos estos enfoques para analizar datos (y no conviene perder la base formal). Por este motivo desde la Estadística Computacional se introdujo el término Statistical Learning (Aprendizaje Estadístico) para hacer referencia a este tipo de herramientas, pero desde el punto de vista estadístico (teniendo en cuenta la incertidumbre debida a no disponer de toda la información).</p></li>
+</ul>
+<p>Tradicionalmente ML no se preocupa del origen de los datos e incluso es habitual que se considere que un conjunto enorme de datos es equivalente a disponer de toda la información (i.e. a la población).</p>
+<p>“The sheer volume of data would obviate the need of theory and even scientific method” — Chris Anderson, físico y periodista, 2008</p>
+<ul class="simple">
+<li><p>Por el contrario en el caso del AE se trata de comprender, si es posible, el proceso subyacente del que provienen los datos y si estos son representativos de la población de interés (i.e. si tienen algún tipo de sesgo). No obstante, en este libro se considerará en general ambos términos como sinónimos.</p></li>
+</ul>
+<p>ML/AE hacen un importante uso de la programación matemática, ya que muchos de sus problemas se plantean en términos de la optimización de funciones bajo restricciones. Recíprocamente, en optimización también se utilizan algoritmos de ML/AE.</p>
+<div class="section" id="machine-learning-vs-data-mining">
+<h2>Machine Learning vs. Data Mining<a class="headerlink" href="#machine-learning-vs-data-mining" title="Permalink to this headline">¶</a></h2>
+<p>Mucha gente utiliza indistintamente los nombres ML y Data Mining (DM). Sin embargo, aunque tienen mucho solapamiento, lo cierto es que hacen referencia a conceptos ligeramente distintos.</p>
+<ul class="simple">
+<li><p>ML es un conjunto de algoritmos principalmente dedicados a hacer predicciones y que son esencialmente automáticos minimizando la intervención humana.</p></li>
+<li><p>DM intenta entender conjuntos de datos (en el sentido de encontrar sus patrones), requiere de una intervención humana activa (al igual que la Inferencia Estadística tradicional), pero utiliza entre otras las técnicas automáticas de ML. Por tanto podríamos pensar que es más parecido al AE.</p></li>
+</ul>
+</div>
+<div class="section" id="las-dos-culturas-breiman-2001b">
+<h2>Las dos culturas (Breiman, 2001b)<a class="headerlink" href="#las-dos-culturas-breiman-2001b" title="Permalink to this headline">¶</a></h2>
+<p>Breiman diferencia dos objetivos en el análisis de datos, que él llama información (en el sentido de inferencia) y predicción. Cada uno de estos objetivos da lugar a una cultura:</p>
+<ul class="simple">
+<li><p><strong>Modelización de datos:</strong> desarrollo de modelos (estocásticos) que permitan ajustar los datos y hacer inferencia. Es el trabajo habitual de los estadísticos académicos.</p></li>
+<li><p><strong>Modelización algorítmica:</strong> (en el sentido de predictiva): esta cultura no está interesada en los mecanismos que generan los datos, sólo en los algoritmos de predicción. Es el trabajo habitual de muchos estadísticos industriales y de muchos ingenieros informáticos. El ML es el núcleo de esta cultura que pone todo el énfasis en la precisión predictiva (así, un importante elemento dinamizador son las competiciones entre algoritmos predictivos, al estilo del Netflix Challenge).</p></li>
+</ul>
+<p>Breiman, L. (2001b). Statistical modeling: The two cultures (with comments and a rejoinder by the author). Statistical Science, 16(3), 199-231. https://doi.org/10.1214/ss/1009213726</p>
+</div>
+<div class="section" id="machine-learning-vs-estadistica-dunson-2018">
+<h2>Machine Learning vs. Estadística (Dunson, 2018)<a class="headerlink" href="#machine-learning-vs-estadistica-dunson-2018" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Machine learning (ML) community</strong>: tends to have its roots in engineering, computer science, and to a certain extent neuroscience – growing out of artificial intelligence (AI). The main publication outlets tend to be peer-reviewed conference proceedings, such as Neural Information Processing Systems (NIPS), and the style of research is very fast paced, trendy, and driven by performance metrics in prediction and related tasks. One
+measure of “trendiness” is the fact that there is a strong auto-correlation in the main focus areas that are represented in the papers accepted to NIPS and other top conferences. For example, in the past several years much of the focus has been on deep neural network methods. The ML community also has a tendency towards marketing and salesmanship, posting talks and papers on social media and attempting to sell their ideas to the broader public. This feature of the research seems to reflect a desire or tendency to want to monetize the algorithms in the near term, perhaps leading to a focus on industry problems
+over scientific problems, where the road to monetization is often much longer and less assured. ML marketing has been quite successful in recent years, and there is abundant interest and discussion in the general public about ML/AI, along with increasing success in start-ups and industrial sector high paying jobs partly fueled by the hype.</p></li>
+<li><p><strong>Statistical (Stats) community</strong>: made up predominantly of researchers who received their initial degree(s) in mathematics followed by graduate training in statistics. The main publication outlets are peer-reviewed journals, most of which have a long drawn  out review process, and the style of research tends to be careful, slower paced, intellectual as opposed to primarily performance driven, emphasizing theoretical support (e.g., through asymptotic properties), under-stated, and conservative. Statisticians tend to be reluctant to market their research, and their training tends to differ dramatically from that for most ML researchers. Statisticians usually have a mathematics base including multivariate calculus, linear algebra, differential equations, and real analysis. They then take several years of probability and statistics, including coverage of asymptotic theory, statistical sampling theory, hypothesis testing, experimental design, and many other areas. ML researchers coming out of Computer Science and Engineering have much less background in many of these areas, but have a stronger background in signal processing, computing (including not just programming but also an understanding of computer
+engineering and hardware), optimization, and computational complexity.</p></li>
+</ul>
+<p>Dunson, D. B. (2018). Statistics in the big data era: Failures of the machine. Statistics and Probability Letters, 136, 4-9. https://doi.org/10.1016/j.spl.2018.02.028</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="metodos-de-aprendizaje-estadistico">
+<h1>Métodos de Aprendizaje Estadístico<a class="headerlink" href="#metodos-de-aprendizaje-estadistico" title="Permalink to this headline">¶</a></h1>
+<p>Dado un conjunto de predictores(caracteristicas) $X_1,X_2,X_3 … X_p $ existe una predicion $Y$ relacionada con X , que puede ser escrita como modelada como :</p>
+<p>$Y=f(X) + \epsilon$,</p>
+<p>Asi, el aprendizaje estadistico hace referencia al conjunto de enfoques sobre los cuales se puede estimar $f$, teniendo presente la naturaleza de los datos.</p>
+<p>¿Cual es la mejor forma de estimar f ?
+De acuerdo con el teorema,  <a class="reference external" href="https://ti.arc.nasa.gov/m/profile/dhw/papers/78.pdf">No free lunch theorem</a>, existen diferentes algoritmos que permiten estimar f, y por cada par de algoritmos de optimizacion, hay tantos en el que el primer algoritmo es mejor que el segundo, como problemas en el que el segundo es mejor que el primero.
+Todos los algoritmos de optimizacion se compartan igual de bien o de mal en prmedio frente a diferentes tipos de problemas. No se ha evidenciado un algoritmo de optmizacion general para cualquier problema. Es necesario incorporar cierto conocmiento especifico del problema.</p>
+<p>En otras palabras:</p>
+<p>“Si tu unica herramienta es un martillo”, tratas cada problema como si fuera un clavo(Abraaham Maslow, 1966). Cada algoritmos de clasificacion tiene sus sesgos inherentes y ninguna clasificacion individual es superior si no hacemos suposicion sobre la tarea. En la practica se hace necesario comparar un puñado de algoritmos distintos para entrenar y seleccionar el mejor modelo de rendimiento. Se debe definir una unidad para definir el rendimiendo de cada algoritmo.</p>
+<p>Algunos lecturas de interés:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://victoryepes.blogs.upv.es/2020/10/14/no-free-lunch/">Comentarios de no-free-lunch</a></p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/6795940">The Lack of A Priori Distinctions Between Learning Algorithms</a></p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="aprendizaje-supervisado">
+<h1>Aprendizaje supervisado :<a class="headerlink" href="#aprendizaje-supervisado" title="Permalink to this headline">¶</a></h1>
+<p>Este forma de aprendizaje puede estar clasificada en dos tipos:</p>
+<ul class="simple">
+<li><p><em>Algoritmos de regresion</em>: Regresion para predecir resultados</p></li>
+<li><p><em>Algoritmos de clasificacion</em>: Clasificar para predecir etiquetas</p></li>
+</ul>
+<div class="section" id="taxonomia">
+<h2>Taxonomia:<a class="headerlink" href="#taxonomia" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Regresion lineal</p></li>
+<li><p>arboles de desicion</p></li>
+<li><p>Naive-Bayes</p></li>
+<li><p>Random-Forest</p></li>
+<li><p>SVM</p></li>
+</ul>
+<p>El aprendizaje supervisado parte de  datos etiquetados para encontrar una funcion f tal que cuando se ingresado una nueva muestra de datos(predictores) el modelo logre predecir que etiqueta deben de tener los datos.</p>
+<p>Incluir imagen del modelo
+Imagen de Coursera</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="aprendizaje-no-supervisado">
+<h1>Aprendizaje No supervisado<a class="headerlink" href="#aprendizaje-no-supervisado" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Clustering: Kmean, DBSCAN, Hierarchical Cluster Analysis(HCA)</p></li>
+<li><p>Anomaly detection and novelty detection (One-calss SVM), Isolation forest</p></li>
+<li><p>Visualization and dimensionality reduction( PCA, kernel PCA, Locally linear embedding LLE)</p></li>
+<li><p>t-Distributed Stochastic Neighbor Embedding</p></li>
+<li><p>Association rule Learning</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="aprendizaje-reforzado">
+<h1>Aprendizaje Reforzado<a class="headerlink" href="#aprendizaje-reforzado" title="Permalink to this headline">¶</a></h1>
+<p>Incluir imagen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="herramientas-del-curso">
+<h1>Herramientas del curso<a class="headerlink" href="#herramientas-del-curso" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Git hub</p></li>
+<li><p>Anaconda</p></li>
+<li><p>Virtual env</p></li>
+<li><p>Principales librerias: Matplotlib, pandas, numpy, seaborn.</p></li>
+</ol>
+<p>#Evalución del curso#</p>
+<ol class="simple">
+<li><p>Tareas 70%  (Conjunto de tareas, entregadas a través del git.)</p></li>
+<li><p>Proyecto Final. 30% (Tiempo son los últimos 2 meses)</p>
+<ul class="simple">
+<li><p>Exposición, Artículo</p></li>
+<li><p>Planificación.</p></li>
+<li><p>Desarrollo.</p></li>
+<li><p>Análisis.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="preeliminares">
+<h1>Preeliminares.<a class="headerlink" href="#preeliminares" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Herramientas del curso.</p></li>
+<li><p>Crear guia de instación</p></li>
+<li><p>Crear guia del github para subir los archivos.</p></li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Sesiones"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Markdown_structures/01Introduccion.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introducción Aprendizaje Estadistico</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Markdown_structures/02IntuicionEstadistica.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Intucion Estadistica</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By H. D Salinas J.<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

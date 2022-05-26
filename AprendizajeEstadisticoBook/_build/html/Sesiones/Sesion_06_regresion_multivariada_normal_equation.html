@@ -1,0 +1,991 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regresion multivariada ecuacion normal, repaso breve. &#8212; Aprendizaje Estatadistico</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Solución a un problema general de machine learning" href="Sesion_07_Ejemplo_practico.html" />
+    <link rel="prev" title="Regresion multivariada" href="Sesion_05_regresion_multivariada.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Aprendizaje Estatadistico</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Curso_aprendizaje_estadistico
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Markdown_structures/00PythonBasico.html">
+   Python Basico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_01a_pandas.html">
+     Repaso de python.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_01b_pandas.html">
+     Construyendo Data Frame desde diccionarios  y cargando datos del un data frame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Markdown_structures/01Introduccion.html">
+   Introducción Aprendizaje Estadistico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_00_introduccion.html">
+     Aprendizaje Estadístico vs. Aprendizaje Automático
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Markdown_structures/02IntuicionEstadistica.html">
+   Intucion Estadistica
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_02_intuicion_estadistica.html">
+     1 Dimension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_03_intuicion_estadistica_II.html">
+     2 Dimensiones
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Markdown_structures/03Modelos.html">
+   Modelos
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_04_regresion_lineal.html">
+     Estructura de un problema general de machine learning:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_05_regresion_multivariada.html">
+     Regresion multivariada
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Regresion multivariada ecuacion normal, repaso breve.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_07_Ejemplo_practico.html">
+     Solución a un problema general de machine learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_08_clasificacion.html">
+     Regresión Logística
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_10_nn_desde_cero_sin_generalizacion.html">
+     Exploracion de la data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_11_SVM.html">
+     Maquinas de soporte vectorial, (
+     <em>
+      Support vector machine SVM
+     </em>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_12_Desicion_Tree.html">
+     Arboles de desición
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Sesiones/Sesion_06_regresion_multivariada_normal_equation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSesiones/Sesion_06_regresion_multivariada_normal_equation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Sesiones/Sesion_06_regresion_multivariada_normal_equation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Regresion multivariada ecuacion normal, repaso breve.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normal-equation">
+   Normal equation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelo-bidimensional">
+   Modelo Bidimensional
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datos-de-boston">
+   Datos de boston
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intepretacion-probabilistica">
+   Intepretación Probabilistica.
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Regresion multivariada ecuacion normal, repaso breve.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Regresion multivariada ecuacion normal, repaso breve.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normal-equation">
+   Normal equation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelo-bidimensional">
+   Modelo Bidimensional
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datos-de-boston">
+   Datos de boston
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intepretacion-probabilistica">
+   Intepretación Probabilistica.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/hernansalinas/Curso_aprendizaje_estadistico/blob/main/Sesiones/Sesion_01a_pandas.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="regresion-multivariada-ecuacion-normal-repaso-breve">
+<h1>Regresion multivariada ecuacion normal, repaso breve.<a class="headerlink" href="#regresion-multivariada-ecuacion-normal-repaso-breve" title="Permalink to this headline">¶</a></h1>
+<p>Supongamos que tenemos un conjunto de caracteristicas $X = X_1,X_2…X_j…X_n$ para realizar una  predicción $y$ con valores esperados $\hat{y}$.</p>
+<p>Cada X, puede ser escrito como:
+$X_1 = x_1^{(1)},x_1^{(2)}, x_1^{(3)}…x_1^{(m)}$,</p>
+<p>$X_2 = x_2^{(1)},x_2^{(2)}, x_2^{(3)}…x_2^{(m)}$,</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>$X_n = x_n^{(1)},x_n^{(2)}, x_n^{(3)}…x_n^{(m)}$.</p>
+<p>Siendo n el número de caracteristicas y m el número de datos de datos,
+$\hat{y} = \hat{y}_1^{(1)}, \hat{y}_1^{(2)}…\hat{y}_1^{(m)} $, el conjunto de datos etiquetados  y $y = y_1^{(1)}, y_1^{(2)}…y_1^{(m)} $ los valores predichos por un modelo</p>
+<p>Lo anterior puede ser resumido  como:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Training</p></th>
+<th class="head"><p>$\hat{y}$</p></th>
+<th class="head"><p>X_1</p></th>
+<th class="head"><p>X_2</p></th>
+<th class="head"><p>.</p></th>
+<th class="head"><p>.</p></th>
+<th class="head"><p>.</p></th>
+<th class="head"><p>.</p></th>
+<th class="head"><p>X_n</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>$\hat{y}_1^{1}$</p></td>
+<td><p>$x_1^{1}$</p></td>
+<td><p>$x_2^{1}$</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>$x_n^{1}$</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>$\hat{y}_1^{2}$</p></td>
+<td><p>$x_1^{2}$</p></td>
+<td><p>$x_2^{2}$</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>$x_n^{2}$</p></td>
+</tr>
+<tr class="row-even"><td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>m</p></td>
+<td><p>$\hat{y}_1^{m}$</p></td>
+<td><p>$x_1^{m}$</p></td>
+<td><p>$x_2^{m}$</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>$x_n^{m}$</p></td>
+</tr>
+</tbody>
+</table>
+<p>y el el modelo puede ser ajustado como sigue:</p>
+<p>Para un solo conjunto de datos de entrenamiento tentemos que:</p>
+<p>$y = h(\theta_0,\theta_1,\theta_2,…,\theta_n ) = \theta_0 + \theta_1 x_1+\theta_2 x_2 + \theta_3 x_3 +…+ \theta_n x_n $.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1fff8ee9-1454-4971-81ff-894f6918675c">
+<span class="eqno">(54)<a class="headerlink" href="#equation-1fff8ee9-1454-4971-81ff-894f6918675c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+h_{\Theta}(x) = [\theta_0,\theta_1,...,\theta_n ]\begin{bmatrix}
+1^{(1)}\\
+x_1^{(1)}\\
+x_2^{(1)}\\
+.\\
+.\\
+.\\
+x_n^{(1)}\\
+\end{bmatrix} = \Theta^T X^{(1)}
+\end{equation}\]</div>
+<p>Para todo el conjunto de datos, tenemos que:</p>
+<p>Sea $\Theta^T = [\theta_0,\theta_1,\theta_2,…,\theta_n]$ una matrix $1 \times (n+1)$ y</p>
+<div class="amsmath math notranslate nohighlight" id="equation-87a5a4a5-c1d2-4218-a11a-9cc0707943b8">
+<span class="eqno">(55)<a class="headerlink" href="#equation-87a5a4a5-c1d2-4218-a11a-9cc0707943b8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+X =
+\begin{bmatrix}
+1&amp; 1 &amp; 1 &amp; .&amp;.&amp;.&amp;1\\
+x_1^{(1)}&amp;x_1^{(2)} &amp; x_1^{(3)} &amp; .&amp;.&amp;.&amp;x_1^{(m)}\\
+.&amp;. &amp; . &amp;.&amp;.&amp;.&amp; .\\
+.&amp;. &amp; . &amp; .&amp;.&amp;.&amp;.\\
+.&amp;. &amp; . &amp; .&amp;.&amp;.&amp;.\\
+x_n^{(1)}&amp;x_n^{(2)} &amp; x^{(3)} &amp; .&amp;.&amp;.&amp;x_n^{(m)}\\
+\end{bmatrix}_{(n+1) \times m}
+\end{equation}\]</div>
+<p>luego $h = \Theta^{T} X $ con dimension $1\times m$</p>
+<p>La anterior ecuación, es un hiperplano en $\mathbb{R}^n$. Notese que en caso de tener una sola característica, la ecuación puede ser análizada según lo visto en la sesión de regresion lineal.</p>
+<p>Para la optimización, vamos a definir la función de coste <strong>$J(\theta_1,\theta_2,\theta_3, …,\theta_n )$</strong> , como la función  asociada a la minima distancia entre dos puntos, según la metrica euclidiana.</p>
+<ul class="simple">
+<li><p>Metrica Eculidiana</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-7919357b-3e6b-4f07-9703-0f8fa41a7e9e">
+<span class="eqno">(56)<a class="headerlink" href="#equation-7919357b-3e6b-4f07-9703-0f8fa41a7e9e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+J(\theta_1,\theta_2,\theta_3, ...,\theta_n )=\frac{1}{2m} \sum_{i=1}^m ( h_{\Theta} (X)-\hat{y}^{(i)})^2 =\frac{1}{2m} \sum_{i = 1}^m (\Theta^{T} X - \hat{y}^{(i)})^2
+\end{equation}\]</div>
+<p>Otras métricas pueden ser definidas como sigue en la siguiente referencia.  <a class="reference external" href="https://jmlb.github.io/flashcards/2018/04/21/list_cost_functions_fo_neuralnets/">Metricas</a>.</p>
+<p>Nuestro objetivo será encontrar los valores mínimos
+$\Theta = \theta_0,\theta_1,\theta_2,…,\theta_n$ que minimizan el error, respecto a los valores etiquetados y esperados $\hat{y}$</p>
+<p>Para encontrar $\Theta$ optimo, se necesita  minimizar la función de coste. Ecnontremos los valores exactos.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="normal-equation">
+<h1>Normal equation<a class="headerlink" href="#normal-equation" title="Permalink to this headline">¶</a></h1>
+<p>Se puede encontrar una solucion exacta para theta sin necesidad de emplear el gradiente descente de la sesiones pasadas, para ellos se puede encontrar el valor minimo de theta y a partir de alli determinar el valor de theta que minimiza J.</p>
+<p>Los pasos para esta minimizacion se dejan como tarea, y pueden ser calculados según lo siguiente:</p>
+<p>Si J es la funcion de coste dada por:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-93d31104-b260-4cc4-b2aa-7c43c4abfdb3">
+<span class="eqno">(57)<a class="headerlink" href="#equation-93d31104-b260-4cc4-b2aa-7c43c4abfdb3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+J(\theta_1,\theta_2,\theta_3, ...,\theta_n )=\frac{1}{2m} \sum_{i = 1}^m (\Theta^{T} X - \hat{y}^{(i)})^2
+\end{equation}\]</div>
+<p>Demostrar que:</p>
+<ul class="simple">
+<li><p>$J(\theta_1,\theta_2,\theta_3, …,\theta_n ) = \frac{1}{2m} (\Theta ^ T X - y)^T (\Theta ^ T X - y)$</p></li>
+<li><p>$ \nabla _{\theta} J = \frac{1}{m}( (X^T X) \Theta - X^T y)$</p></li>
+</ul>
+<p>Para encontrar el valor minimo de \theta,  $\nabla _{\theta} J = 0$,</p>
+<ul class="simple">
+<li><p>$\Theta = (X^T X)^{-1} X^T y$</p></li>
+</ul>
+<p>Para la demostracion anterior emplee las siguientes propiedades:</p>
+<ul class="simple">
+<li><p>$z^T z= \sum_i z_i^2$</p></li>
+<li><p>$a^T b = b^Ta$</p></li>
+<li><p>$\nabla _x b^T x = b$</p></li>
+<li><p>$\nabla _x  x^T A x = 2Ax$</p></li>
+</ul>
+<p>donde a, b, x son matrices, $\nabla_x$ es la derivada respecto al vector x, y A es una matriz simétrica</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_boston</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="c1">#from matplotlib.ticker import LinearLocator</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regresion lineal  simple</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x1</span> <span class="c1">#- 3*x2 + 0.0</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Y&quot;</span><span class="p">:</span><span class="n">y</span><span class="p">,</span> <span class="s2">&quot;X1&quot;</span><span class="p">:</span><span class="n">x1</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;ones&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">X1</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span><span class="s2">&quot;ro&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20887113640&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Sesion_06_regresion_multivariada_normal_equation_5_1.png" src="../_images/Sesion_06_regresion_multivariada_normal_equation_5_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;ones&quot;</span><span class="p">,</span><span class="s2">&quot;X1&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@X</span><span class="p">)</span><span class="o">.</span><span class="n">I</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">y</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-8.32667268e-17,  2.00000000e+00])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>$\Theta = (X^T X)^{-1} X^T y$</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">X1</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span><span class="s2">&quot;ro&quot;</span><span class="p">)</span>
+<span class="n">x_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_</span> <span class="p">,</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x_</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20887ca3760&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Sesion_06_regresion_multivariada_normal_equation_8_1.png" src="../_images/Sesion_06_regresion_multivariada_normal_equation_8_1.png" />
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="modelo-bidimensional">
+<h1>Modelo Bidimensional<a class="headerlink" href="#modelo-bidimensional" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> 
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">X1</span><span class="p">,</span> <span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">X1</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">X2</span> <span class="o">-</span> <span class="mf">1.0</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="s2">&quot;3d&quot;</span><span class="p">})</span>
+<span class="n">surf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;X1&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;X2&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s2">&quot;Y1&quot;</span><span class="p">)</span>
+<span class="c1">#scatter = ax.scatter(x1, x2, y,&quot;-&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Y1&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Sesion_06_regresion_multivariada_normal_equation_10_1.png" src="../_images/Sesion_06_regresion_multivariada_normal_equation_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ecuaciones parametricas del mismo plano:</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">beta</span>  <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">alpha</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">beta</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">alpha</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">beta</span> <span class="o">-</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="s2">&quot;3d&quot;</span><span class="p">})</span>
+<span class="n">surf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">surf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Sesion_06_regresion_multivariada_normal_equation_12_0.png" src="../_images/Sesion_06_regresion_multivariada_normal_equation_12_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regresion bi-lineal</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Y&quot;</span><span class="p">:</span><span class="n">y</span><span class="p">,</span> <span class="s2">&quot;X1&quot;</span><span class="p">:</span><span class="n">x1</span><span class="p">,</span><span class="s2">&quot;X2&quot;</span><span class="p">:</span><span class="n">x2</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;ones&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;ones&quot;</span><span class="p">,</span><span class="s2">&quot;X1&quot;</span><span class="p">,</span><span class="s2">&quot;X2&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@X</span><span class="p">)</span><span class="o">.</span><span class="n">I</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">y</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1. ,  0.2, -0.5])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="datos-de-boston">
+<h1>Datos de boston<a class="headerlink" href="#datos-de-boston" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tomar los datos de las casas de boston y hacer una regresion lineal tomando </span>
+<span class="c1"># el average number of rooms per dwelling.</span>
+<span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;http://lib.stat.cmu.edu/datasets/boston&quot;</span>
+<span class="n">raw_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;\s+&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">raw_df</span><span class="o">.</span><span class="n">values</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:],</span> <span class="n">raw_df</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">raw_df</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;mean_&quot;</span><span class="p">:</span><span class="n">target</span><span class="p">,</span> <span class="s2">&quot;rm&quot;</span><span class="p">:</span><span class="n">data</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;ones&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean_</th>
+      <th>rm</th>
+      <th>ones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>24.0</td>
+      <td>6.575</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>21.6</td>
+      <td>6.421</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>34.7</td>
+      <td>7.185</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>33.4</td>
+      <td>6.998</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>36.2</td>
+      <td>7.147</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>501</th>
+      <td>22.4</td>
+      <td>6.593</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>502</th>
+      <td>20.6</td>
+      <td>6.120</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>503</th>
+      <td>23.9</td>
+      <td>6.976</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>504</th>
+      <td>22.0</td>
+      <td>6.794</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>505</th>
+      <td>11.9</td>
+      <td>6.030</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>506 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">rm</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">mean_</span><span class="p">,</span><span class="s2">&quot;go&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20888de6b30&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Sesion_06_regresion_multivariada_normal_equation_19_1.png" src="../_images/Sesion_06_regresion_multivariada_normal_equation_19_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;ones&quot;</span><span class="p">,</span><span class="s2">&quot;rm&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;mean_&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="nd">@X</span><span class="p">)</span><span class="o">.</span><span class="n">I</span><span class="p">)</span><span class="nd">@X</span><span class="o">.</span><span class="n">T</span><span class="nd">@Y</span>
+<span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[-34.67062078],
+        [  9.10210898]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">rm</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">mean_</span><span class="p">,</span><span class="s2">&quot;go&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;b-&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mean&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;RM&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;RM&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Sesion_06_regresion_multivariada_normal_equation_22_1.png" src="../_images/Sesion_06_regresion_multivariada_normal_equation_22_1.png" />
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="intepretacion-probabilistica">
+<h1>Intepretación Probabilistica.<a class="headerlink" href="#intepretacion-probabilistica" title="Permalink to this headline">¶</a></h1>
+<p>Supongamos que tenemos una caracteristica $x_i$ con m valores de entrenamiento, si asumimos que cada valor $y_i$ presenta una dispersión gaussiana $\epsilon_i$, cada $y_i$ podrá tener el siguiente valor:</p>
+<p>$y^{i} = \Theta^T X^{(i)} + \epsilon_i$</p>
+<p>Asumiendo ademas que el ruido gaussiando es aleatorio y esta distribuido de forma identica, con media cero y varianza $\sigma$, tenemos que la probabilidad de que la cantidad y tenga  dispersion $\epsilon_i$ es:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e308a46b-d8c9-442b-a9db-2df82a1b00d9">
+<span class="eqno">(58)<a class="headerlink" href="#equation-e308a46b-d8c9-442b-a9db-2df82a1b00d9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+p(\epsilon^{(i)})=\frac{1}{\sqrt{2\pi\sigma}} e^{-\frac{ \left( \epsilon^{(i)}\right)^2 }{2\sigma ^2}}
+\end{equation}\]</div>
+<p>Escribiendo, lo anterior en terminos de la probabilidad de obtener un valor de $y^{i}$ dado un $x^{i}$ parametrizado por $\theta$ obtenemos que:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6cc13171-d5a2-4275-9c54-ff03badbbb7c">
+<span class="eqno">(59)<a class="headerlink" href="#equation-6cc13171-d5a2-4275-9c54-ff03badbbb7c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+p_i(y^{i}|x^{i};\theta)=\frac{1}{\sqrt{2\pi\sigma}} e^{-\frac{ \left( y_i - \Theta^T X^{(i)} \right)^2 }{2\sigma ^2}}
+\end{equation}\]</div>
+<p>Si ausmimos independicia estadística de cada $\epsilon^{(i)}$, la probabilidad $L(\theta)$ asociada a toda la distribución de puntos viene dada por:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f865c48b-38d9-4372-8fea-f5ecda7cb072">
+<span class="eqno">(60)<a class="headerlink" href="#equation-f865c48b-38d9-4372-8fea-f5ecda7cb072" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\cal{L}(\theta) = p(\vec{y}|X;\theta)=\prod_{i=1}^{n} p_i(y^{i}|x^{i};\theta)
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e8495c0a-347f-41a1-8ed6-d438399b99e5">
+<span class="eqno">(61)<a class="headerlink" href="#equation-e8495c0a-347f-41a1-8ed6-d438399b99e5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\cal{L}(\theta) =\prod_{i=1}^{n} \frac{1}{\sqrt{2\pi\sigma}} e^{-\frac{ \left( y_i - \Theta^T X^{(i)} \right)^2 }{2\sigma ^2}}
+\end{equation}\]</div>
+<p>para tener la mejor estimación posible de los valores que se deben elegir de  $\theta$, se escogeran los parámetros que generan la mayor probabilidad de ocurrencia según las observaciones, es decir, aquellos valores para el cual $L(\theta)$ es máximo, si aplicamos el logaritmo natural antes de máximar tenemos que:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-45005f60-cfc3-4f68-b46e-0e84d8ab0e4d">
+<span class="eqno">(62)<a class="headerlink" href="#equation-45005f60-cfc3-4f68-b46e-0e84d8ab0e4d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\ln \cal{L}(\theta) = \cal{l}(\theta) = \ln \left[\prod_{i=1}^{n} \frac{1}{\sqrt{2\pi\sigma}} e^{-\frac{ \left( y_i - \Theta^T X^{(i)} \right)^2 }{2\sigma ^2}} \right]
+\end{equation}\]</div>
+<p>Después de un par de pasos se puede encontrar que:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-acfda7ab-893a-441a-b095-272800b927e1">
+<span class="eqno">(63)<a class="headerlink" href="#equation-acfda7ab-893a-441a-b095-272800b927e1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\cal{l}(\theta) = n\ln \frac{1}{\sqrt{2\pi\sigma}} - \frac{1}{2\sigma^2} \sum_{i=1}^{n} (y^{i}-\Theta^T X^{i})^2
+\end{equation}\]</div>
+<p>maximar $\cal{l(\theta)}$ equivale a encontrar donde  $\nabla_{\theta} \cal{l(\theta)} = 0$. Lo anterior muestra por que la elección de minimos cuadrados puede ser una buena eleccción para el analisis de los datos.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Sesiones"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Sesion_05_regresion_multivariada.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Regresion multivariada</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Sesion_07_Ejemplo_practico.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Solución a un problema general de machine learning</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By H. D Salinas J.<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
