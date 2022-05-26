@@ -1,5 +1,5 @@
 # Curso_aprendizaje_estadistico
-Curso electivo: Aprendizaje estadistico.
+Curso electivo: [Aprendizaje estadistico](https://hernansalinas.github.io/Curso_aprendizaje_estadistico/).
 
 Fecha: 2021-01
 
