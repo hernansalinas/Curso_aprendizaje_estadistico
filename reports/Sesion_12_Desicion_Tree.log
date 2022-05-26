@@ -1,0 +1,55 @@
+Traceback (most recent call last):
+  File "C:\Users\salin\anaconda3\envs\book\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\salin\anaconda3\envs\book\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\salin\anaconda3\envs\book\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\salin\anaconda3\envs\book\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\salin\anaconda3\envs\book\lib\asyncio\base_events.py", line 641, in run_until_complete
+    return future.result()
+  File "C:\Users\salin\anaconda3\envs\book\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\salin\anaconda3\envs\book\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\salin\anaconda3\envs\book\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#https://www.codificandobits.com/blog/clasificacion-arboles-decision-algoritmo-cart/
+from sklearn.datasets import make_classification
+X0, y0 = make_classification(n_samples=20,
+    n_features=2, n_redundant=0, n_informative=1, random_state=1, 
+    n_clusters_per_class=1)
+
+x=np.arange(-2, 3,1)
+x_,y_ = np.meshgrid(x,x)
+
+fig, ax = plt.subplots()
+
+ax.plot(X0[:,0][y0==0],X0[:,1][y0==0],"ro", alpha=0.5)
+ax.plot(X0[:,0][y0==1],X0[:,1][y0==1],"bo", alpha=0.5)
+ax.plot(x_,y_,"k.")
+
+ax.axvline(x = 1, color = 'm', label="x1<=1")
+ax.axhline(y = 0.2, color = 'y', label="x2<0.2")
+ax.axvline(x = 0.0, color = 'k', label="x2<0.2")
+
+plt.legend(loc=3)
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Input [1;32mIn [1][0m, in [0;36m<cell line: 7>[1;34m()[0m
+[0;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdatasets[39;00m [38;5;28;01mimport[39;00m make_classification
+[0;32m      3[0m X0, y0 [38;5;241m=[39m make_classification(n_samples[38;5;241m=[39m[38;5;241m20[39m,
+[0;32m      4[0m     n_features[38;5;241m=[39m[38;5;241m2[39m, n_redundant[38;5;241m=[39m[38;5;241m0[39m, n_informative[38;5;241m=[39m[38;5;241m1[39m, random_state[38;5;241m=[39m[38;5;241m1[39m, 
+[0;32m      5[0m     n_clusters_per_class[38;5;241m=[39m[38;5;241m1[39m)
+[1;32m----> 7[0m x[38;5;241m=[39m[43mnp[49m[38;5;241m.[39marange([38;5;241m-[39m[38;5;241m2[39m, [38;5;241m3[39m,[38;5;241m1[39m)
+[0;32m      8[0m x_,y_ [38;5;241m=[39m np[38;5;241m.[39mmeshgrid(x,x)
+[0;32m     10[0m fig, ax [38;5;241m=[39m plt[38;5;241m.[39msubplots()
+
+[1;31mNameError[0m: name 'np' is not defined
+NameError: name 'np' is not defined
+

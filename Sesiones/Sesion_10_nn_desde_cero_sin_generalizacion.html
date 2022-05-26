@@ -1,0 +1,932 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exploracion de la data &#8212; Aprendizaje Estatadistico</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Maquinas de soporte vectorial, (Support vector machine SVM)" href="Sesion_11_SVM.html" />
+    <link rel="prev" title="Regresión Logística" href="Sesion_08_clasificacion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Aprendizaje Estatadistico</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Curso_aprendizaje_estadistico
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Markdown_structures/00PythonBasico.html">
+   Python Basico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_01a_pandas.html">
+     Repaso de python.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_01b_pandas.html">
+     Construyendo Data Frame desde diccionarios  y cargando datos del un data frame
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Markdown_structures/01Introduccion.html">
+   Introducción Aprendizaje Estadistico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_00_introduccion.html">
+     Aprendizaje Estadístico vs. Aprendizaje Automático
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Markdown_structures/02IntuicionEstadistica.html">
+   Intucion Estadistica
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_02_intuicion_estadistica.html">
+     1 Dimension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_03_intuicion_estadistica_II.html">
+     2 Dimensiones
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Markdown_structures/03Modelos.html">
+   Modelos
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_04_regresion_lineal.html">
+     Estructura de un problema general de machine learning:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_05_regresion_multivariada.html">
+     Regresion multivariada
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_06_regresion_multivariada_normal_equation.html">
+     Regresion multivariada ecuacion normal, repaso breve.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_07_Ejemplo_practico.html">
+     Solución a un problema general de machine learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_08_clasificacion.html">
+     Regresión Logística
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exploracion de la data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_11_SVM.html">
+     Maquinas de soporte vectorial, (
+     <em>
+      Support vector machine SVM
+     </em>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Sesion_12_Desicion_Tree.html">
+     Arboles de desición
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Sesiones/Sesion_10_nn_desde_cero_sin_generalizacion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSesiones/Sesion_10_nn_desde_cero_sin_generalizacion.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Sesiones/Sesion_10_nn_desde_cero_sin_generalizacion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exploracion de la data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#con-m-datos-de-entrenamientos">
+   Con m datos de entrenamientos.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topologia-de-la-red">
+   Topologia de la red
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determinacion-de-la-funcion-de-coste">
+   Determinación de la Función de coste
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#backward-propagation">
+   Backward Propagation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aplicacion-gradiente-descendente">
+   Aplicacion gradiente descendente
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Exploracion de la data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exploracion de la data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#con-m-datos-de-entrenamientos">
+   Con m datos de entrenamientos.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topologia-de-la-red">
+   Topologia de la red
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determinacion-de-la-funcion-de-coste">
+   Determinación de la Función de coste
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#backward-propagation">
+   Backward Propagation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aplicacion-gradiente-descendente">
+   Aplicacion gradiente descendente
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sc</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sc</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">h5py</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;h5py&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/gdrive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Drive already mounted at /content/gdrive; to attempt to forcibly remount, call drive.mount(&quot;/content/gdrive&quot;, force_remount=True).
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exploracion-de-la-data">
+<h1>Exploracion de la data<a class="headerlink" href="#exploracion-de-la-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_train</span><span class="o">=</span> <span class="s2">&quot;/content/train_catvnoncat.h5&quot;</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">data_train</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+ 
+<span class="n">data_test</span><span class="o">=</span> <span class="s2">&quot;/content/test_catvnoncat.h5&quot;</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">data_test</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_dataset</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;KeysViewHDF5 [&#39;list_classes&#39;, &#39;train_set_x&#39;, &#39;train_set_y&#39;]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the data</span>
+<span class="n">xtrain_classes</span><span class="p">,</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">train_label</span> <span class="o">=</span>\
+<span class="n">train_dataset</span><span class="p">[</span><span class="s2">&quot;list_classes&quot;</span><span class="p">],</span><span class="n">train_dataset</span><span class="p">[</span><span class="s2">&quot;train_set_x&quot;</span><span class="p">],</span><span class="n">train_dataset</span><span class="p">[</span><span class="s2">&quot;train_set_y&quot;</span><span class="p">]</span>
+
+<span class="n">test_classes</span><span class="p">,</span> <span class="n">xtest</span><span class="p">,</span><span class="n">test_label</span> <span class="o">=</span>\
+<span class="n">test_dataset</span><span class="p">[</span><span class="s2">&quot;list_classes&quot;</span><span class="p">],</span><span class="n">test_dataset</span><span class="p">[</span><span class="s2">&quot;test_set_x&quot;</span><span class="p">],</span><span class="n">test_dataset</span><span class="p">[</span><span class="s2">&quot;test_set_y&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">xtrain</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f3abe9adcd0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Sesion_10_nn_desde_cero_sin_generalizacion_6_1.png" src="../_images/Sesion_10_nn_desde_cero_sin_generalizacion_6_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xtrain_</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xtrain</span><span class="p">,(</span><span class="mi">209</span><span class="p">,</span> <span class="mi">64</span><span class="o">*</span><span class="mi">64</span><span class="o">*</span><span class="mi">3</span><span class="p">))</span><span class="o">/</span><span class="mi">255</span>
+<span class="n">xtest_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xtest</span><span class="p">,(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">64</span><span class="o">*</span><span class="mi">64</span><span class="o">*</span><span class="mi">3</span><span class="p">))</span><span class="o">/</span><span class="mi">255</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">xtrain_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(209, 12288)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Construyamos una red neuronal con una capa de entrada, una capa de salida con una red y L-1 redes ocultas.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="con-m-datos-de-entrenamientos">
+<h1>Con m datos de entrenamientos.<a class="headerlink" href="#con-m-datos-de-entrenamientos" title="Permalink to this headline">¶</a></h1>
+<p>Para $m$ datos de entrenamiento, las expresión anteriores pueden ser resumidas en las siguientes ecuaciones</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5b306c3d-719c-42f2-8c0c-b108647a3d83">
+<span class="eqno">(79)<a class="headerlink" href="#equation-5b306c3d-719c-42f2-8c0c-b108647a3d83" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\begin{bmatrix}
+z_1^{(0)}  &amp;z_1^{(1)} &amp; .&amp;.&amp; .&amp;z_1^{(m)}\\
+z_2^{(0)}  &amp;z_2^{(1)} &amp;. &amp;.&amp;  .&amp;z_2^{(m)}\\
+.          &amp; .        &amp;. &amp; &amp;   &amp;.      \\
+.          &amp; .        &amp;  &amp;. &amp;   &amp;.      \\
+.          &amp; .        &amp;  &amp;  &amp; .&amp;      \\
+z_{n^{[l]}}^{(0)}&amp;z_{n^{[l]}}^{(1)} &amp; . &amp; .&amp; .&amp; z_{n^{[l]}}^{(m)}        \\
+\end{bmatrix}^{[l]}=
+\begin{bmatrix}
+\theta_{11} &amp; \theta_{12} &amp; . &amp; .&amp; .&amp; \theta_{1n^{[l-1]}}\\
+\theta_{21} &amp; \theta_{22} &amp; . &amp; .&amp; .&amp; \theta_{2n^{[l-1]}}\\
+. &amp; .  &amp; . &amp;   &amp; &amp; .\\
+. &amp; .  &amp;   &amp; . &amp; &amp; .\\
+. &amp; .  &amp;   &amp;  &amp; .&amp; .\\
+\theta_{n^{[l]}1} &amp; \theta_{n^{[l]}2} &amp; . &amp; .&amp; .&amp; \theta_{n^{[l]}n^{[l-1]}}\\
+\end{bmatrix}^{[l]}_{n^{[l]} \times n^{[l-1]}}
+\begin{bmatrix}
+a_1^{(0)}  &amp;a_1^{(1)} &amp; .&amp;.&amp; .&amp;a_1^{(m)}\\
+a_2^{(0)}  &amp;a_2^{(1)} &amp;. &amp;.&amp;  .&amp;a_2^{(m)}\\
+.          &amp; .        &amp;. &amp; &amp;   &amp;.      \\
+.          &amp; .        &amp;  &amp;. &amp;   &amp;.      \\
+.          &amp; .        &amp;  &amp;  &amp; .&amp;      \\
+a_{n^{[L-1]}}^{(0)}&amp;a_{n^{[L-1]}}^{(1)} &amp; . &amp; .&amp; .&amp; a_{n^{[L-1]}}^{(m)}        \\
+\end{bmatrix}^{[l-1]} +
+\begin{bmatrix}
+b_1 \\
+b_2 \\
+. \\
+. \\
+. \\
+b_{n^{[l]}}\\
+\end{bmatrix}^{[l]} 
+\end{equation}\]</div>
+<p>Escrito de una formas mas compacta tenemos que:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c09dcda2-13d5-4356-ab61-5e6ab5642f40">
+<span class="eqno">(80)<a class="headerlink" href="#equation-c09dcda2-13d5-4356-ab61-5e6ab5642f40" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+[ \vec{Z}^{[l](0)},\vec{Z}^{[l](1)},...,\vec{Z}^{[l](m)}  ]= \Theta^{[l]} [\vec{A}^{[l-1](0)},\vec{A}^{[l-1](1)},...,\vec{A}^{[l-1](m)} ]+ \vec{b}^{[l]}
+\end{equation}\]</div>
+<p>Aplicando la funcion de activación:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c5ed84ef-cec0-4167-a5d5-5fa5b9ee2d07">
+<span class="eqno">(81)<a class="headerlink" href="#equation-c5ed84ef-cec0-4167-a5d5-5fa5b9ee2d07" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+[\vec{A}^{[l](0)},\vec{A}^{[l](1)},...,\vec{A}^{[l](m)} ]=f([\vec{Z}^{[l](0)},\vec{Z}^{[l](1)},...,\vec{Z}^{[l](m)}  ]) 
+\end{equation}\]</div>
+<p>Las dimensiones de las expresiones anteriores, pueden ser resumidas en lo siguiente:</p>
+<p>$\mathrm{dim(\vec{\cal{Z}}^{[l]})}=n^{[l]}\times m $</p>
+<p>$\mathrm{dim(\vec{\Theta}^{[l]})}=n^{[l]}\times n^{[l-1]}$</p>
+<p>$\mathrm{dim(\vec{\cal{A}}^{[l]})}=n^{[l-1]}\times m $</p>
+<p>$\mathrm{dim(\vec{b}^{[l]})}=n^{[l]}$</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="topologia-de-la-red">
+<h1>Topologia de la red<a class="headerlink" href="#topologia-de-la-red" title="Permalink to this headline">¶</a></h1>
+<p>Topology = [n_x, n_h1, n_h2, n_h3, …,n_y]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_x</span> <span class="o">=</span> <span class="mi">12288</span><span class="c1"># -- size of the input layer</span>
+<span class="c1">#n_h = # -- size of the hidden layer</span>
+<span class="n">n_y</span> <span class="o">=</span> <span class="mi">1</span><span class="c1"># -- size of the output layer</span>
+
+
+<span class="k">class</span> <span class="nc">layer_nn</span><span class="p">():</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">act_fun</span><span class="p">,</span> <span class="n">n_layer_present</span><span class="p">,</span> <span class="n">n_layer_before</span> <span class="p">):</span>    
+    <span class="bp">self</span><span class="o">.</span><span class="n">W</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">n_layer_before</span><span class="p">,</span><span class="n">n_layer_present</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">B</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">n_layer_present</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">act_fun</span> <span class="o">=</span> <span class="n">act_fun</span>
+
+  <span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span><span class="n">A</span><span class="p">,</span> <span class="n">Ap</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Ap</span> <span class="o">=</span> <span class="n">Ap</span>
+
+  <span class="k">def</span> <span class="nf">derivates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dW</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">dW</span> <span class="o">=</span> <span class="n">dW</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db</span>
+
+<span class="k">def</span> <span class="nf">act_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">activation</span><span class="p">):</span>        
+    <span class="k">if</span> <span class="n">activation</span> <span class="o">==</span> <span class="s2">&quot;sigmoid&quot;</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">fp</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">activation</span> <span class="o">==</span> <span class="s2">&quot;tanh&quot;</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">fp</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">layer_nn</span><span class="p">(</span><span class="s2">&quot;hola, &quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">layer</span><span class="o">.</span><span class="n">W</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.18083188]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topology</span> <span class="o">=</span> <span class="p">[</span><span class="n">n_x</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span> <span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">l1</span> <span class="o">=</span>  <span class="n">layer_nn</span><span class="p">(</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_x</span> <span class="p">)</span>
+<span class="n">l2</span> <span class="o">=</span>  <span class="n">layer_nn</span><span class="p">(</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="p">)</span>
+<span class="n">l3</span> <span class="o">=</span>  <span class="n">layer_nn</span><span class="p">(</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span> <span class="p">)</span>
+<span class="n">l4</span> <span class="o">=</span>  <span class="n">layer_nn</span><span class="p">(</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span> <span class="p">)</span>
+<span class="n">nn_red</span> <span class="o">=</span> <span class="p">[</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">,</span><span class="n">l3</span><span class="p">,</span><span class="n">l4</span><span class="p">]</span>
+
+<span class="c1"># Generalizar la topologia de la red</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Forward pass y check dimensiones</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A0</span> <span class="o">=</span> <span class="n">xtrain_</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">A0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12288, 209)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">l1</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 12288)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hyperplanos de salida de la capa 1</span>
+<span class="n">Z1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A0</span> <span class="o">+</span><span class="n">l1</span><span class="o">.</span><span class="n">B</span>
+<span class="c1"># Funciones sigmoide de la capa 1</span>
+<span class="n">A1</span><span class="p">,</span> <span class="n">A1p</span> <span class="o">=</span> <span class="n">act_function</span><span class="p">(</span><span class="n">Z1</span><span class="p">,</span> <span class="s2">&quot;sigmoid&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">A1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 209)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">l2</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para la capa 2 </span>
+<span class="n">Z2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A1</span> <span class="o">+</span><span class="n">l2</span><span class="o">.</span><span class="n">B</span>
+<span class="n">A2</span><span class="p">,</span> <span class="n">A2p</span> <span class="o">=</span> <span class="n">act_function</span><span class="p">(</span><span class="n">Z2</span><span class="p">,</span> <span class="s2">&quot;sigmoid&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para la capa 3 </span>
+<span class="n">Z3</span> <span class="o">=</span> <span class="n">l3</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A2</span> <span class="o">+</span> <span class="n">l3</span><span class="o">.</span><span class="n">B</span>
+<span class="n">A3</span><span class="p">,</span> <span class="n">A3p</span> <span class="o">=</span> <span class="n">act_function</span><span class="p">(</span><span class="n">Z3</span><span class="p">,</span> <span class="s2">&quot;sigmoid&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para la capa 3 </span>
+<span class="n">Z4</span> <span class="o">=</span> <span class="n">l4</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A3</span> <span class="o">+</span> <span class="n">l4</span><span class="o">.</span><span class="n">B</span>
+<span class="n">A4</span><span class="p">,</span> <span class="n">A4p</span> <span class="o">=</span> <span class="n">act_function</span><span class="p">(</span><span class="n">Z4</span><span class="p">,</span> <span class="s2">&quot;sigmoid&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A0</span> <span class="o">=</span> <span class="n">xtrain_</span><span class="o">.</span><span class="n">T</span>
+<span class="n">A</span><span class="p">,</span> <span class="n">nn</span> <span class="o">=</span> <span class="n">forward_pass</span><span class="p">(</span><span class="n">A0</span><span class="p">,</span> <span class="n">nn_red</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="determinacion-de-la-funcion-de-coste">
+<h1>Determinación de la Función de coste<a class="headerlink" href="#determinacion-de-la-funcion-de-coste" title="Permalink to this headline">¶</a></h1>
+<p>$$-\frac{1}{m} \sum\limits_{i = 1}^{m} (y^{(i)}\log\left(a^{[L] (i)}\right) + (1-y^{(i)})\log\left(1- a^{<span class="xref myst">L</span>}\right)) \tag{7}$$</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="backward-propagation">
+<h1>Backward Propagation<a class="headerlink" href="#backward-propagation" title="Permalink to this headline">¶</a></h1>
+<p>Para una capa $l$ arbitraria tenemos que:</p>
+<ul>
+<li><div class="amsmath math notranslate nohighlight" id="equation-e99ff8ba-bdae-4232-9ce1-c4d357d02a7d">
+<span class="eqno">(82)<a class="headerlink" href="#equation-e99ff8ba-bdae-4232-9ce1-c4d357d02a7d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+d\Theta^{[l]} =  d{\cal Z}^{(i)[l]} A^{(i)[l-1]} = dA^{(i)[l]} f'({\cal Z}^{(i)[l]} ) A^{(i)[l-1]}
+\end{equation}\]</div>
+</li>
+<li><div class="amsmath math notranslate nohighlight" id="equation-7073f9e1-4128-49f7-9359-47f3a8c2a9f3">
+<span class="eqno">(83)<a class="headerlink" href="#equation-7073f9e1-4128-49f7-9359-47f3a8c2a9f3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+db^{[l]} =  d{\cal Z}^{(i)[L]}  = dA^{(i)[l]} f'({\cal Z}^{(i)[l]} ) 
+\end{equation}\]</div>
+</li>
+</ul>
+<p>Los valores de dA pueden ser escritos como:</p>
+<ul>
+<li><div class="amsmath math notranslate nohighlight" id="equation-c364bb71-8b4c-433f-8c8b-033377b8f69b">
+<span class="eqno">(84)<a class="headerlink" href="#equation-c364bb71-8b4c-433f-8c8b-033377b8f69b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+dA^{(i)[l-1]} = \Theta^{l} dZ^{(i)[l]}
+\end{equation}\]</div>
+</li>
+</ul>
+<p>$dZ^{[l]} = dA^{[l]} * f’^{[l]} (Z^{[l]}) $</p>
+<p>$ d\Theta^{[l]} = \frac{\partial \mathcal{J} }{\partial \Theta^{[l]}} = \frac{1}{m} dZ^{[l]} A^{[l-1] T} \tag{1}$
+$ db^{[l]} = \frac{\partial \mathcal{J} }{\partial b^{[l]}} = \frac{1}{m} \sum_{i = 1}^{m} dZ^{<span class="xref myst">l</span>}\tag{2}$
+$ dA^{[l-1]} = \frac{\partial \mathcal{L} }{\partial A^{[l-1]}} = \theta^{[l] T} dZ^{[l]} \tag{3}$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#def backward_propagation(AL,Y, nn):</span>
+<span class="c1"># Capa L-esima</span>
+<span class="n">dAL</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Y</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">A</span><span class="p">))</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">nn</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">Ap</span>
+<span class="n">dZ</span> <span class="o">=</span> <span class="n">dAL</span><span class="o">*</span><span class="n">fp</span>
+<span class="n">m_</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">209</span>
+
+<span class="n">dW_L</span> <span class="o">=</span> <span class="n">m_</span><span class="o">*</span><span class="n">dZ</span><span class="nd">@nn</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">Ap</span><span class="o">.</span><span class="n">T</span>
+<span class="n">db_L</span> <span class="o">=</span>  <span class="n">m_</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dZ</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">nn</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">dW</span><span class="o">=</span><span class="n">dW_L</span>
+<span class="n">nn</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">db</span><span class="o">=</span><span class="n">db_L</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Capa L-1</span>
+<span class="n">dAL_1</span> <span class="o">=</span> <span class="n">dAL</span> 
+<span class="n">fp</span> <span class="o">=</span> <span class="n">nn</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">Ap</span>
+<span class="n">dZ_1</span> <span class="o">=</span> <span class="n">dAL_1</span><span class="o">*</span><span class="n">fp</span>
+<span class="n">dW_L1</span> <span class="o">=</span> <span class="n">m_</span><span class="o">*</span><span class="n">dZ_1</span><span class="nd">@nn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">Ap</span><span class="o">.</span><span class="n">T</span>
+<span class="n">db_L1</span> <span class="o">=</span> <span class="n">dZ_1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">nn</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">dW</span><span class="o">=</span><span class="n">dW_L1</span>
+<span class="n">nn</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">db</span><span class="o">=</span><span class="n">db_L1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Capa L-2</span>
+<span class="n">dAL_2</span> <span class="o">=</span> <span class="n">dAL_1</span> 
+<span class="n">fp</span> <span class="o">=</span> <span class="n">nn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">Ap</span>
+<span class="n">dZ_2</span> <span class="o">=</span> <span class="n">dAL_2</span><span class="o">*</span><span class="n">fp</span>
+<span class="n">dW_L2</span> <span class="o">=</span> <span class="n">m_</span><span class="o">*</span><span class="n">dZ_2</span><span class="nd">@nn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">Ap</span><span class="o">.</span><span class="n">T</span>
+<span class="n">db_L2</span> <span class="o">=</span> <span class="n">dZ_2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">nn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dW</span><span class="o">=</span><span class="n">dW_L2</span>
+<span class="n">nn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">db</span><span class="o">=</span><span class="n">db_L2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">nn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dW</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">nn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">W</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 3)
+(3, 4)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="aplicacion-gradiente-descendente">
+<h1>Aplicacion gradiente descendente<a class="headerlink" href="#aplicacion-gradiente-descendente" title="Permalink to this headline">¶</a></h1>
+<p>$$ W^{[l]} = W^{[l]} - \alpha \text{ } dW^{[l]} \tag{16}$$
+$$ b^{[l]} = b^{[l]} - \alpha \text{ } db^{[l]} \tag{17}$$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update_params</span><span class="p">(</span><span class="n">nn</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">):</span>  
+  <span class="n">L</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">nn</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
+    
+    <span class="n">nn</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">W</span> <span class="o">=</span> <span class="n">nn</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">W</span> <span class="o">-</span> <span class="n">learning_rate</span><span class="o">*</span><span class="n">nn</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">dW</span><span class="o">.</span><span class="n">T</span>  
+    <span class="n">nn</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">B</span> <span class="o">=</span> <span class="n">nn</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">B</span> <span class="o">-</span> <span class="n">learning_rate</span><span class="o">*</span><span class="n">nn</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">db</span>
+  <span class="k">return</span> <span class="n">nn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="n">backward_propagation</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span><span class="n">nn</span><span class="p">)</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="n">update_params</span><span class="p">(</span><span class="n">nn</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>  
+<span class="n">A</span><span class="p">,</span> <span class="n">nn</span> <span class="o">=</span> <span class="n">forward_pass</span><span class="p">(</span><span class="n">A0</span><span class="p">,</span> <span class="n">nn</span><span class="p">)</span>
+<span class="n">J</span> <span class="o">=</span> <span class="n">cost_Function</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_label</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Sesiones"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Sesion_08_clasificacion.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Regresión Logística</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Sesion_11_SVM.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Maquinas de soporte vectorial, (<em>Support vector machine SVM</em>)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By H. D Salinas J.<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
