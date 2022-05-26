@@ -493,8 +493,8 @@ $\hat{y} = \hat{y}_1^{(1)}, \hat{y}_1^{(2)}…\hat{y}_1^{(m)} $, el conjunto de 
 <p>y el el modelo puede ser ajustado como sigue:</p>
 <p>Para un solo conjunto de datos de entrenamiento tentemos que:</p>
 <p>$y = h(\theta_0,\theta_1,\theta_2,…,\theta_n ) = \theta_0 + \theta_1 x_1+\theta_2 x_2 + \theta_3 x_3 +…+ \theta_n x_n $.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a33cc1bf-a5b1-448e-b765-324578d28292">
-<span class="eqno">(54)<a class="headerlink" href="#equation-a33cc1bf-a5b1-448e-b765-324578d28292" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1fff8ee9-1454-4971-81ff-894f6918675c">
+<span class="eqno">(54)<a class="headerlink" href="#equation-1fff8ee9-1454-4971-81ff-894f6918675c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 h_{\Theta}(x) = [\theta_0,\theta_1,...,\theta_n ]\begin{bmatrix}
 1^{(1)}\\
 x_1^{(1)}\\
@@ -507,8 +507,8 @@ x_n^{(1)}\\
 \end{equation}\]</div>
 <p>Para todo el conjunto de datos, tenemos que:</p>
 <p>Sea $\Theta^T = [\theta_0,\theta_1,\theta_2,…,\theta_n]$ una matrix $1 \times (n+1)$ y</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5f4effcf-2e41-47d2-92b7-a599381369fa">
-<span class="eqno">(55)<a class="headerlink" href="#equation-5f4effcf-2e41-47d2-92b7-a599381369fa" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-87a5a4a5-c1d2-4218-a11a-9cc0707943b8">
+<span class="eqno">(55)<a class="headerlink" href="#equation-87a5a4a5-c1d2-4218-a11a-9cc0707943b8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 X =
 \begin{bmatrix}
 1&amp; 1 &amp; 1 &amp; .&amp;.&amp;.&amp;1\\
@@ -525,8 +525,8 @@ x_n^{(1)}&amp;x_n^{(2)} &amp; x^{(3)} &amp; .&amp;.&amp;.&amp;x_n^{(m)}\\
 <ul class="simple">
 <li><p>Metrica Eculidiana</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-10884030-99c9-4ce1-9e65-73469fe0faef">
-<span class="eqno">(56)<a class="headerlink" href="#equation-10884030-99c9-4ce1-9e65-73469fe0faef" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7919357b-3e6b-4f07-9703-0f8fa41a7e9e">
+<span class="eqno">(56)<a class="headerlink" href="#equation-7919357b-3e6b-4f07-9703-0f8fa41a7e9e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 J(\theta_1,\theta_2,\theta_3, ...,\theta_n )=\frac{1}{2m} \sum_{i=1}^m ( h_{\Theta} (X)-\hat{y}^{(i)})^2 =\frac{1}{2m} \sum_{i = 1}^m (\Theta^{T} X - \hat{y}^{(i)})^2
 \end{equation}\]</div>
 <p>Otras métricas pueden ser definidas como sigue en la siguiente referencia.  <a class="reference external" href="https://jmlb.github.io/flashcards/2018/04/21/list_cost_functions_fo_neuralnets/">Metricas</a>.</p>
@@ -539,8 +539,8 @@ $\Theta = \theta_0,\theta_1,\theta_2,…,\theta_n$ que minimizan el error, respe
 <p>Se puede encontrar una solucion exacta para theta sin necesidad de emplear el gradiente descente de la sesiones pasadas, para ellos se puede encontrar el valor minimo de theta y a partir de alli determinar el valor de theta que minimiza J.</p>
 <p>Los pasos para esta minimizacion se dejan como tarea, y pueden ser calculados según lo siguiente:</p>
 <p>Si J es la funcion de coste dada por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8aef73e3-a560-4f00-97fe-c17286d21b93">
-<span class="eqno">(57)<a class="headerlink" href="#equation-8aef73e3-a560-4f00-97fe-c17286d21b93" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-93d31104-b260-4cc4-b2aa-7c43c4abfdb3">
+<span class="eqno">(57)<a class="headerlink" href="#equation-93d31104-b260-4cc4-b2aa-7c43c4abfdb3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 J(\theta_1,\theta_2,\theta_3, ...,\theta_n )=\frac{1}{2m} \sum_{i = 1}^m (\Theta^{T} X - \hat{y}^{(i)})^2
 \end{equation}\]</div>
 <p>Demostrar que:</p>
@@ -592,7 +592,7 @@ J(\theta_1,\theta_2,\theta_3, ...,\theta_n )=\frac{1}{2m} \sum_{i = 1}^m (\Theta
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2914bd07640&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20887113640&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Sesion_06_regresion_multivariada_normal_equation_5_1.png" src="../_images/Sesion_06_regresion_multivariada_normal_equation_5_1.png" />
@@ -628,7 +628,7 @@ J(\theta_1,\theta_2,\theta_3, ...,\theta_n )=\frac{1}{2m} \sum_{i = 1}^m (\Theta
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2914c8938b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20887ca3760&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Sesion_06_regresion_multivariada_normal_equation_8_1.png" src="../_images/Sesion_06_regresion_multivariada_normal_equation_8_1.png" />
@@ -843,7 +843,7 @@ J(\theta_1,\theta_2,\theta_3, ...,\theta_n )=\frac{1}{2m} \sum_{i = 1}^m (\Theta
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2914d9d6b30&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20888de6b30&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Sesion_06_regresion_multivariada_normal_equation_19_1.png" src="../_images/Sesion_06_regresion_multivariada_normal_equation_19_1.png" />
@@ -897,32 +897,32 @@ J(\theta_1,\theta_2,\theta_3, ...,\theta_n )=\frac{1}{2m} \sum_{i = 1}^m (\Theta
 <p>Supongamos que tenemos una caracteristica $x_i$ con m valores de entrenamiento, si asumimos que cada valor $y_i$ presenta una dispersión gaussiana $\epsilon_i$, cada $y_i$ podrá tener el siguiente valor:</p>
 <p>$y^{i} = \Theta^T X^{(i)} + \epsilon_i$</p>
 <p>Asumiendo ademas que el ruido gaussiando es aleatorio y esta distribuido de forma identica, con media cero y varianza $\sigma$, tenemos que la probabilidad de que la cantidad y tenga  dispersion $\epsilon_i$ es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3001c040-81d9-46c6-b538-f5c5bc8b9ab0">
-<span class="eqno">(58)<a class="headerlink" href="#equation-3001c040-81d9-46c6-b538-f5c5bc8b9ab0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e308a46b-d8c9-442b-a9db-2df82a1b00d9">
+<span class="eqno">(58)<a class="headerlink" href="#equation-e308a46b-d8c9-442b-a9db-2df82a1b00d9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 p(\epsilon^{(i)})=\frac{1}{\sqrt{2\pi\sigma}} e^{-\frac{ \left( \epsilon^{(i)}\right)^2 }{2\sigma ^2}}
 \end{equation}\]</div>
 <p>Escribiendo, lo anterior en terminos de la probabilidad de obtener un valor de $y^{i}$ dado un $x^{i}$ parametrizado por $\theta$ obtenemos que:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-be708095-d56f-4752-b810-e80423c0ca45">
-<span class="eqno">(59)<a class="headerlink" href="#equation-be708095-d56f-4752-b810-e80423c0ca45" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6cc13171-d5a2-4275-9c54-ff03badbbb7c">
+<span class="eqno">(59)<a class="headerlink" href="#equation-6cc13171-d5a2-4275-9c54-ff03badbbb7c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 p_i(y^{i}|x^{i};\theta)=\frac{1}{\sqrt{2\pi\sigma}} e^{-\frac{ \left( y_i - \Theta^T X^{(i)} \right)^2 }{2\sigma ^2}}
 \end{equation}\]</div>
 <p>Si ausmimos independicia estadística de cada $\epsilon^{(i)}$, la probabilidad $L(\theta)$ asociada a toda la distribución de puntos viene dada por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd01d2d2-c428-4c61-8191-4de0ed7395f3">
-<span class="eqno">(60)<a class="headerlink" href="#equation-cd01d2d2-c428-4c61-8191-4de0ed7395f3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f865c48b-38d9-4372-8fea-f5ecda7cb072">
+<span class="eqno">(60)<a class="headerlink" href="#equation-f865c48b-38d9-4372-8fea-f5ecda7cb072" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \cal{L}(\theta) = p(\vec{y}|X;\theta)=\prod_{i=1}^{n} p_i(y^{i}|x^{i};\theta)
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-92362a6c-be46-40c3-93ba-c7f2c8b3fbc5">
-<span class="eqno">(61)<a class="headerlink" href="#equation-92362a6c-be46-40c3-93ba-c7f2c8b3fbc5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e8495c0a-347f-41a1-8ed6-d438399b99e5">
+<span class="eqno">(61)<a class="headerlink" href="#equation-e8495c0a-347f-41a1-8ed6-d438399b99e5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \cal{L}(\theta) =\prod_{i=1}^{n} \frac{1}{\sqrt{2\pi\sigma}} e^{-\frac{ \left( y_i - \Theta^T X^{(i)} \right)^2 }{2\sigma ^2}}
 \end{equation}\]</div>
 <p>para tener la mejor estimación posible de los valores que se deben elegir de  $\theta$, se escogeran los parámetros que generan la mayor probabilidad de ocurrencia según las observaciones, es decir, aquellos valores para el cual $L(\theta)$ es máximo, si aplicamos el logaritmo natural antes de máximar tenemos que:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b8707cdc-0413-4ee0-afc0-29e13bbd8a1a">
-<span class="eqno">(62)<a class="headerlink" href="#equation-b8707cdc-0413-4ee0-afc0-29e13bbd8a1a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-45005f60-cfc3-4f68-b46e-0e84d8ab0e4d">
+<span class="eqno">(62)<a class="headerlink" href="#equation-45005f60-cfc3-4f68-b46e-0e84d8ab0e4d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \ln \cal{L}(\theta) = \cal{l}(\theta) = \ln \left[\prod_{i=1}^{n} \frac{1}{\sqrt{2\pi\sigma}} e^{-\frac{ \left( y_i - \Theta^T X^{(i)} \right)^2 }{2\sigma ^2}} \right]
 \end{equation}\]</div>
 <p>Después de un par de pasos se puede encontrar que:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-88672410-0381-4f03-a339-cac72e15916b">
-<span class="eqno">(63)<a class="headerlink" href="#equation-88672410-0381-4f03-a339-cac72e15916b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-acfda7ab-893a-441a-b095-272800b927e1">
+<span class="eqno">(63)<a class="headerlink" href="#equation-acfda7ab-893a-441a-b095-272800b927e1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \cal{l}(\theta) = n\ln \frac{1}{\sqrt{2\pi\sigma}} - \frac{1}{2\sigma^2} \sum_{i=1}^{n} (y^{i}-\Theta^T X^{i})^2
 \end{equation}\]</div>
 <p>maximar $\cal{l(\theta)}$ equivale a encontrar donde  $\nabla_{\theta} \cal{l(\theta)} = 0$. Lo anterior muestra por que la elección de minimos cuadrados puede ser una buena eleccción para el analisis de los datos.</p>
