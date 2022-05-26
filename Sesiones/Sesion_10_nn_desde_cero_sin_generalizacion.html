@@ -522,8 +522,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="tex2jax_ignore mathjax_ignore section" id="con-m-datos-de-entrenamientos">
 <h1>Con m datos de entrenamientos.<a class="headerlink" href="#con-m-datos-de-entrenamientos" title="Permalink to this headline">¶</a></h1>
 <p>Para $m$ datos de entrenamiento, las expresión anteriores pueden ser resumidas en las siguientes ecuaciones</p>
-<div class="amsmath math notranslate nohighlight" id="equation-155d47ed-041e-487e-9878-97b91476c8f4">
-<span class="eqno">(79)<a class="headerlink" href="#equation-155d47ed-041e-487e-9878-97b91476c8f4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c098005f-9bec-48ec-be66-73bc1117ef45">
+<span class="eqno">(79)<a class="headerlink" href="#equation-c098005f-9bec-48ec-be66-73bc1117ef45" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \begin{bmatrix}
 z_1^{(0)}  &amp;z_1^{(1)} &amp; .&amp;.&amp; .&amp;z_1^{(m)}\\
 z_2^{(0)}  &amp;z_2^{(1)} &amp;. &amp;.&amp;  .&amp;z_2^{(m)}\\
@@ -558,13 +558,13 @@ b_{n^{[l]}}\\
 \end{bmatrix}^{[l]} 
 \end{equation}\]</div>
 <p>Escrito de una formas mas compacta tenemos que:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0264ae0-fed7-4f03-8b90-bcb259824ce6">
-<span class="eqno">(80)<a class="headerlink" href="#equation-b0264ae0-fed7-4f03-8b90-bcb259824ce6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1741b0b8-6b98-4fc1-a880-55e43730e7f3">
+<span class="eqno">(80)<a class="headerlink" href="#equation-1741b0b8-6b98-4fc1-a880-55e43730e7f3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 [ \vec{Z}^{[l](0)},\vec{Z}^{[l](1)},...,\vec{Z}^{[l](m)}  ]= \Theta^{[l]} [\vec{A}^{[l-1](0)},\vec{A}^{[l-1](1)},...,\vec{A}^{[l-1](m)} ]+ \vec{b}^{[l]}
 \end{equation}\]</div>
 <p>Aplicando la funcion de activación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-04e53554-26eb-47ed-833e-f4a3798d0c3c">
-<span class="eqno">(81)<a class="headerlink" href="#equation-04e53554-26eb-47ed-833e-f4a3798d0c3c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7d76f4e7-bd80-4fe5-b39e-927c2df18bba">
+<span class="eqno">(81)<a class="headerlink" href="#equation-7d76f4e7-bd80-4fe5-b39e-927c2df18bba" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 [\vec{A}^{[l](0)},\vec{A}^{[l](1)},...,\vec{A}^{[l](m)} ]=f([\vec{Z}^{[l](0)},\vec{Z}^{[l](1)},...,\vec{Z}^{[l](m)}  ]) 
 \end{equation}\]</div>
 <p>Las dimensiones de las expresiones anteriores, pueden ser resumidas en lo siguiente:</p>
@@ -753,21 +753,21 @@ b_{n^{[l]}}\\
 <h1>Backward Propagation<a class="headerlink" href="#backward-propagation" title="Permalink to this headline">¶</a></h1>
 <p>Para una capa $l$ arbitraria tenemos que:</p>
 <ul>
-<li><div class="amsmath math notranslate nohighlight" id="equation-a5a809c0-da36-4248-9c0e-79bf9360c370">
-<span class="eqno">(82)<a class="headerlink" href="#equation-a5a809c0-da36-4248-9c0e-79bf9360c370" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<li><div class="amsmath math notranslate nohighlight" id="equation-ebd5a251-7041-475c-819b-650d02934305">
+<span class="eqno">(82)<a class="headerlink" href="#equation-ebd5a251-7041-475c-819b-650d02934305" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 d\Theta^{[l]} =  d{\cal Z}^{(i)[l]} A^{(i)[l-1]} = dA^{(i)[l]} f'({\cal Z}^{(i)[l]} ) A^{(i)[l-1]}
 \end{equation}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-a0274e9e-8fca-4d17-8053-4146f0c37039">
-<span class="eqno">(83)<a class="headerlink" href="#equation-a0274e9e-8fca-4d17-8053-4146f0c37039" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<li><div class="amsmath math notranslate nohighlight" id="equation-595d9d69-31a1-4306-8340-a5791df886e9">
+<span class="eqno">(83)<a class="headerlink" href="#equation-595d9d69-31a1-4306-8340-a5791df886e9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 db^{[l]} =  d{\cal Z}^{(i)[L]}  = dA^{(i)[l]} f'({\cal Z}^{(i)[l]} ) 
 \end{equation}\]</div>
 </li>
 </ul>
 <p>Los valores de dA pueden ser escritos como:</p>
 <ul>
-<li><div class="amsmath math notranslate nohighlight" id="equation-f1bf4136-0b25-4a63-b989-33e51e193a4b">
-<span class="eqno">(84)<a class="headerlink" href="#equation-f1bf4136-0b25-4a63-b989-33e51e193a4b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<li><div class="amsmath math notranslate nohighlight" id="equation-132359bf-f122-4ba9-8ebe-1591fe1299aa">
+<span class="eqno">(84)<a class="headerlink" href="#equation-132359bf-f122-4ba9-8ebe-1591fe1299aa" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 dA^{(i)[l-1]} = \Theta^{l} dZ^{(i)[l]}
 \end{equation}\]</div>
 </li>
