@@ -48,6 +48,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -526,8 +528,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="dimension">
 <h1>1 Dimension<a class="headerlink" href="#dimension" title="Permalink to this headline">¶</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-4fb90da7-dd51-42cd-a468-79e984e920dc">
-<span class="eqno">(1)<a class="headerlink" href="#equation-4fb90da7-dd51-42cd-a468-79e984e920dc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b20cc8b6-680d-49ed-ba0d-087432a2bfe1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-b20cc8b6-680d-49ed-ba0d-087432a2bfe1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x)=\frac{e^{-x^2/2}}{\sqrt(2\pi)}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -568,7 +570,7 @@ f(x)=\frac{e^{-x^2/2}}{\sqrt(2\pi)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1605980e080&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e09a8bfb20&gt;
 </pre></div>
 </div>
 <img alt="../_images/Sesion_02_intuicion_estadistica_5_1.png" src="../_images/Sesion_02_intuicion_estadistica_5_1.png" />
@@ -583,7 +585,7 @@ f(x)=\frac{e^{-x^2/2}}{\sqrt(2\pi)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1605a011390&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1e09b0b9ae0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Sesion_02_intuicion_estadistica_7_1.png" src="../_images/Sesion_02_intuicion_estadistica_7_1.png" />
@@ -616,7 +618,7 @@ f(x)=\frac{e^{-x^2/2}}{\sqrt(2\pi)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1605a037310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e09b0bb430&gt;
 </pre></div>
 </div>
 <img alt="../_images/Sesion_02_intuicion_estadistica_9_1.png" src="../_images/Sesion_02_intuicion_estadistica_9_1.png" />
@@ -783,7 +785,7 @@ f(x)=\frac{e^{-x^2/2}}{\sqrt(2\pi)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score: 0.97
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score: 0.955
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.])
@@ -803,12 +805,12 @@ f(x)=\frac{e^{-x^2/2}}{\sqrt(2\pi)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1., 1.,
+       1., 0., 1., 1., 1., 0., 1., 1., 1., 1., 0., 1., 1., 0., 1., 0., 1.,
+       1., 0., 1., 1., 1., 1., 1., 1., 1., 0., 1., 0., 1., 1., 1., 1., 1.,
+       0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+       1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 1.,
+       1., 1., 1., 1., 0., 1., 1., 1., 1., 1., 0., 1., 1., 1., 1.])
 </pre></div>
 </div>
 </div>
@@ -828,7 +830,7 @@ f(x)=\frac{e^{-x^2/2}}{\sqrt(2\pi)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1605a6bafe0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1e09b75f9a0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Sesion_02_intuicion_estadistica_25_1.png" src="../_images/Sesion_02_intuicion_estadistica_25_1.png" />
@@ -958,14 +960,14 @@ f(x)=\frac{e^{-x^2/2}}{\sqrt(2\pi)}
 <div class="tex2jax_ignore mathjax_ignore section" id="dimensiones">
 <h1>2 Dimensiones<a class="headerlink" href="#dimensiones" title="Permalink to this headline">¶</a></h1>
 <p>Caso Bivariante</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a59d6524-cdcf-4299-999f-e98c5da89767">
-<span class="eqno">(2)<a class="headerlink" href="#equation-a59d6524-cdcf-4299-999f-e98c5da89767" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5255bafd-e9b5-4759-a561-fa50cdd55447">
+<span class="eqno">(2)<a class="headerlink" href="#equation-5255bafd-e9b5-4759-a561-fa50cdd55447" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x, y) = \frac{1}{2\pi \sigma_x \sigma_y \sqrt{1-\rho^2}} \exp \left( -\frac{1}{2(1-\rho^2)} \left(\frac{x^2}{\sigma_x^2}+\frac{y^2}{\sigma_y^2}-\frac{2\rho x y}{(\sigma_x \sigma_y)} \right) \right) 
 \end{equation}\]</div>
 <p>$\rho$ coeficiente de correlación, media es $(0, 0)$</p>
 <p>La matriz de covarianzas viene dada por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-72aac44b-76a6-4def-b71e-3c978575307e">
-<span class="eqno">(3)<a class="headerlink" href="#equation-72aac44b-76a6-4def-b71e-3c978575307e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2ae2c298-9e3b-43f9-ad04-a6a894d3d7b9">
+<span class="eqno">(3)<a class="headerlink" href="#equation-2ae2c298-9e3b-43f9-ad04-a6a894d3d7b9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Sigma =  
 \begin{bmatrix}
 \sigma_x^2 &amp; \rho \sigma_x \sigma_y  \\
@@ -976,8 +978,8 @@ f(x, y) = \frac{1}{2\pi \sigma_x \sigma_y \sqrt{1-\rho^2}} \exp \left( -\frac{1}
 <div class="section" id="el-caso-mas-general-viene-dado-por">
 <h2>El caso más general viene dado por:<a class="headerlink" href="#el-caso-mas-general-viene-dado-por" title="Permalink to this headline">¶</a></h2>
 <p>En el caso más general tenemos que :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-944f83a0-4b80-48be-9df0-ccadea89ed5c">
-<span class="eqno">(4)<a class="headerlink" href="#equation-944f83a0-4b80-48be-9df0-ccadea89ed5c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d7e26451-d435-4da2-8c90-982f99580a13">
+<span class="eqno">(4)<a class="headerlink" href="#equation-d7e26451-d435-4da2-8c90-982f99580a13" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f_X(x_1,x_2, ... x_n) = \frac{1}{2\pi^{n/2}|\Sigma|^{1/2}} \exp\left( -\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)\right)
 \end{equation}\]</div>
 <p>$|\Sigma|$ es el determinante de la matrix de covarianza,</p>
@@ -1118,32 +1120,32 @@ f_X(x_1,x_2, ... x_n) = \frac{1}{2\pi^{n/2}|\Sigma|^{1/2}} \exp\left( -\frac{1}{
 <img alt="../_images/Sesion_02_intuicion_estadistica_38_1.png" src="../_images/Sesion_02_intuicion_estadistica_38_1.png" />
 </div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-b2ae2980-f10e-4fd7-ae70-acb83631bcec">
-<span class="eqno">(5)<a class="headerlink" href="#equation-b2ae2980-f10e-4fd7-ae70-acb83631bcec" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bf732249-16d0-4941-b04c-0907982cf1b7">
+<span class="eqno">(5)<a class="headerlink" href="#equation-bf732249-16d0-4941-b04c-0907982cf1b7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mu =  
 \begin{bmatrix}
 0 \\
 0 \\
 \end{bmatrix}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-ed5bc098-3a4b-4826-a4b0-e30703e0e412">
-<span class="eqno">(6)<a class="headerlink" href="#equation-ed5bc098-3a4b-4826-a4b0-e30703e0e412" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7177fa4f-f5dd-4f9d-99dd-f15253d72cca">
+<span class="eqno">(6)<a class="headerlink" href="#equation-7177fa4f-f5dd-4f9d-99dd-f15253d72cca" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Sigma =  
 \begin{bmatrix}
 1 &amp; 0  \\
 0 &amp; 1\\
 \end{bmatrix}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-4dd448bf-a0be-4872-9a75-e80c7036c2c5">
-<span class="eqno">(7)<a class="headerlink" href="#equation-4dd448bf-a0be-4872-9a75-e80c7036c2c5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b2315a97-8969-4319-aff9-4d1b41965c23">
+<span class="eqno">(7)<a class="headerlink" href="#equation-b2315a97-8969-4319-aff9-4d1b41965c23" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Sigma =  
 \begin{bmatrix}
 1 &amp; 0.5  \\
 0.5 &amp; 1\\
 \end{bmatrix}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-92a2711d-8641-4e3f-8971-405485c091d0">
-<span class="eqno">(8)<a class="headerlink" href="#equation-92a2711d-8641-4e3f-8971-405485c091d0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-66b1bce2-7293-4435-bd9f-31f88c44c7cb">
+<span class="eqno">(8)<a class="headerlink" href="#equation-66b1bce2-7293-4435-bd9f-31f88c44c7cb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \Sigma =  
 \begin{bmatrix}
 1 &amp; 0.8  \\
@@ -1478,7 +1480,7 @@ por ¿cual es el plano que permite separar dos distrubuciones?, es importante re
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6940298507462687
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7611940298507462
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Valores Esperados&#39;)
@@ -1506,7 +1508,7 @@ por ¿cual es el plano que permite separar dos distrubuciones?, es importante re
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1605cb32080&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1e09dc54670&gt;
 </pre></div>
 </div>
 <img alt="../_images/Sesion_02_intuicion_estadistica_58_1.png" src="../_images/Sesion_02_intuicion_estadistica_58_1.png" />
@@ -1546,7 +1548,7 @@ por ¿cual es el plano que permite separar dos distrubuciones?, es importante re
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6567164179104478
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7388059701492538
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Valores Esperados&#39;)
@@ -1574,7 +1576,7 @@ por ¿cual es el plano que permite separar dos distrubuciones?, es importante re
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1605cc471c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1e09ce534f0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Sesion_02_intuicion_estadistica_62_1.png" src="../_images/Sesion_02_intuicion_estadistica_62_1.png" />
@@ -1633,7 +1635,7 @@ por ¿cual es el plano que permite separar dos distrubuciones?, es importante re
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1605e35a110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1e09dab3fa0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Sesion_02_intuicion_estadistica_65_1.png" src="../_images/Sesion_02_intuicion_estadistica_65_1.png" />

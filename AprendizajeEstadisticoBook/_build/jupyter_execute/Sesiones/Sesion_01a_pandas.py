@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# <a href="https://colab.research.google.com/github/hernansalinas/Curso_aprendizaje_estadistico/blob/main/Sesiones/Sesion_01b_pandas.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+# 
+# 
+# 
+# 
+
 # # Repaso de python. 
 # Objetivo: El objetivo de esta sesion es estudiar conceptos basicos de python necesarios para realizar modelos de maching learning
 # 
