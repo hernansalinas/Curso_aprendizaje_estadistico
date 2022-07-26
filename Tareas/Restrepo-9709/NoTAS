@@ -1,0 +1,52 @@
+
+
+Modelos:
+
+-Regresión lineal
+-Rnadom Forest
+-Red Neuronal
+-SVC
+-Regresión logística
+
+
+
+Pasos:  Construir X
+        Métrica----------> Función de coste
+        Optimización
+            -Gradiente desc
+            -Adams
+            -Newton-Raphson
+        Análisis de las métricas de los datos de entrenamiento 70%, Validación o desarrollo 20%, Test 10%
+            -Curvas de aprendizaje
+                  
+                  
+Al aumentar la complejidad (grado del polinomio etc.) disminuye el score de los datos de entrenamiento y aumenta en los de desarrollo
+
+
+----------------------------Primero se ocupan de los datos de entrenamiento y luego los de desarrollo mediante regularización, disinuir complejidad y en NN dropoint.
+
+-------------------------------------------------------------------------------------------------------------------------------
+=============================================================================================================================
+
+Regresión lineal:    
+
+Modelo:   h(θ) = θ0 + θ1*X
+
+Generalmente se usan minimos cuadrados
+
+¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ES EL MÍNIMO SIEMPRE GLOBAL EN UNA REGRESIÓN LINEAL?????????????????????????????????
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
