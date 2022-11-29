@@ -1,0 +1,6 @@
+{
+    "key1": "LLave tipo string",
+    "key2": 2,  
+    "Nombres": ["Pedro", "Juan", "Jasinto", "Jose"],
+    "NotasCursos": {"Estadistica": 1, "Mecanica Cuantica": 2, "Atomica": "N/A"}
+  }

@@ -1,0 +1,4 @@
+# Creer el virtual enviorment con la dependencia de python necesarias para la api.
+1. conda create -n myenv python=3.9
+2. python install requerimientos.txt
+
