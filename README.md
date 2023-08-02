@@ -1,14 +1,20 @@
 # Curso_aprendizaje_estadistico
-Curso electivo: [Aprendizaje estadistico](https://hernansalinas.github.io/Curso_aprendizaje_estadistico/).
 
-Fecha: 2021-01
+
+Curso electivo: Aprendizaje estadístico
+
+- [Sitio web del curso](https://hernansalinas.github.io/web_site_AprendizajeEstadistico/)
+
+- [draft book](https://hernansalinas.github.io/Curso_aprendizaje_estadistico/)
+
+Fecha: 2023-02
 
 Universidad de Antioquia
 
 :construction: Estado: En construcción :construction:
 
 
-## Contenido
+<!-- ## Contenido
 
 - [Introduccion](https://github.com/hernansalinas/Curso_aprendizaje_estadistico/blob/main/Sesiones/Sesion_00_introduccion.ipynb)
 - Introduccion a pandas
@@ -18,7 +24,7 @@ Universidad de Antioquia
 - Ecuacion normal en la regresion lineal
 - Ejemplo Practico de una regresion lineal
 - Clasificación Regresión logística.
-<!--- Interpretación probabílistica -->
+- Interpretación probabílistica -->
 
  
 
