@@ -1,1 +1,0 @@
-from .mysnake_env import SnakeEnv
